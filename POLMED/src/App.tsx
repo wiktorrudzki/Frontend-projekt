@@ -1,5 +1,5 @@
-function App() {
-  return <div className="App"></div>;
-}
+const App = () => {
+  return <div>hello polmed</div>;
+};
 
 export default App;
