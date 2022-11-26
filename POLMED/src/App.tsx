@@ -3,6 +3,7 @@ import Home from "@/pages/home";
 import OurDoctors from "@/pages/ourDoctors";
 import Pricing from "@/pages/pricing";
 import Contact from "@/pages/contact";
+import "@/styles/global-styles.css";
 
 const App = () => {
   return (
