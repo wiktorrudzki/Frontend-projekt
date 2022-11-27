@@ -4,10 +4,11 @@ import OurDoctors from "@/pages/ourDoctors";
 import Pricing from "@/pages/pricing";
 import Contact from "@/pages/contact";
 import "@/styles/global-styles.css";
-
+import Button from "./components/button";
 const App = () => {
   return (
     <div>
+      <Button />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ourDoctors" element={<OurDoctors />} />
