@@ -3,11 +3,13 @@ import Home from "@/pages/home";
 import OurDoctors from "@/pages/ourDoctors";
 import Pricing from "@/pages/pricing";
 import Contact from "@/pages/contact";
+import Nav from "@/components/nav";
 import "@/styles/global-styles.css";
 
 const App = () => {
   return (
     <div>
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ourDoctors" element={<OurDoctors />} />
