@@ -16,4 +16,25 @@ body {
   --primary: #0099cc;
   --light-primary: #0099cc30;
   --gray: #999999;
-}/*# sourceMappingURL=global-styles.css.map */
+}
+
+.nav-link {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  list-style: none;
+  padding: 0.32em 1em;
+  border-radius: 0.9em;
+  color: var(--primary);
+  background-color: var(--light-primary);
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  filter: brightness(75%);
+}
+
+.nav-link:active {
+  transform: scale(0.93);
+}/*# sourceMappingURL=style.css.map */
