@@ -1,0 +1,29 @@
+@import "../../../styles/global-styles";
+
+.nav-item {
+  width: fit-content;
+  list-style: none;
+  padding: 0.32em 1em;
+  border-radius: 0.9em;
+  color: var(--primary);
+  background-color: var(--light-primary);
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:visited {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.nav-item:hover {
+  filter: brightness(75%);
+}
+
+.nav-item:active {
+  transform: scale(0.93);
+}
