@@ -1,6 +1,6 @@
 @import "../../../styles/global-styles";
 
-.nav-link {
+.nav-item {
   width: fit-content;
   list-style: none;
   padding: 0.32em 1em;
@@ -11,10 +11,19 @@
   cursor: pointer;
 }
 
-.nav-link:hover {
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:visited {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.nav-item:hover {
   filter: brightness(75%);
 }
 
-.nav-link:active {
+.nav-item:active {
   transform: scale(0.93);
 }

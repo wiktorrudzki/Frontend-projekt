@@ -18,7 +18,7 @@ body {
   --gray: #999999;
 }
 
-.nav-link {
+.nav-item {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -31,10 +31,19 @@ body {
   cursor: pointer;
 }
 
-.nav-link:hover {
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:visited {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.nav-item:hover {
   filter: brightness(75%);
 }
 
-.nav-link:active {
+.nav-item:active {
   transform: scale(0.93);
 }/*# sourceMappingURL=style.css.map */

@@ -9,7 +9,7 @@ import "@/styles/global-styles.css";
 const App = () => {
   return (
     <div>
-      <NavLink content="Kontent" />
+      <NavLink content="Kontent" url="/" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ourDoctors" element={<OurDoctors />} />
