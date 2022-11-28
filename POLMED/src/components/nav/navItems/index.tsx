@@ -6,7 +6,7 @@ type Props = {
   url: string;
 };
 
-const NavLink = ({ content, url }: Props) => {
+const NavItem = ({ content, url }: Props) => {
   return (
     <li className="nav-item">
       <Link className="nav-link" to={url}>
@@ -16,4 +16,4 @@ const NavLink = ({ content, url }: Props) => {
   );
 };
 
-export default NavLink;
+export default NavItem;
