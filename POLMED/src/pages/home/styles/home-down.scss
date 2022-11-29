@@ -1,0 +1,45 @@
+@import "../../../styles/global-styles";
+
+.hp-down {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--white);
+  color: black;
+  top: 100%;
+  position: absolute;
+  z-index: 1;
+  transition: all 1s ease-out;
+  overflow: hidden;
+}
+
+.hp-down-triangle {
+  position: absolute;
+  bottom: 7%;
+  left: calc(50% - 0.8em);
+  background-color: var(--primary);
+  text-align: left;
+  cursor: pointer;
+}
+.hp-down-triangle:before,
+.hp-down-triangle:after {
+  content: "";
+  position: absolute;
+  background-color: inherit;
+}
+.hp-down-triangle,
+.hp-down-triangle:before,
+.hp-down-triangle:after {
+  width: 1.6em;
+  height: 1.6em;
+  border-top-right-radius: 30%;
+}
+
+.hp-down-triangle {
+  transform: rotate(60deg) skewX(-30deg) scale(1, 0.866);
+}
+.hp-down-triangle:before {
+  transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(0, -50%);
+}
+.hp-down-triangle:after {
+  transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
+}
