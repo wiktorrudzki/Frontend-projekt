@@ -1,7 +1,16 @@
 import React from "react";
 import "./style.css";
 
-const Button = () => {
-  return <button>sample text</button>;
+interface Props {
+  backgroundColor: string;
+  color: string;
+  fontSize: number | string;
+  content: string;
+  borderStyle: string;
+  borderColor: string;
+}
+
+const Button = ({backgroundColor, color, fontSize, content, borderStyle, borderColor}:Props) => {
+  return <button className="ButtonClass" style={{backgroundColor,color, fontSize, borderColor, borderStyle}}>{content}</button>;
 };
 export default Button;
