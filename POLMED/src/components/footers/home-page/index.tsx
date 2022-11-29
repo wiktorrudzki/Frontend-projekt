@@ -35,7 +35,7 @@ const HomePageFooter = () => {
           </li>
         </ul>
       </section>
-      <p className="home-page-footer-lower">Wszelkie prawa zastrzeżone @ POLmed</p>
+      <p className="hp-footer-lower">Wszelkie prawa zastrzeżone @ POLmed</p>
     </footer>
   );
 };
