@@ -13,7 +13,7 @@
 
 .hp-down-triangle {
   position: absolute;
-  bottom: 25%;
+  bottom: 22%;
   left: calc(50% - 0.8em);
   background-color: var(--primary);
   text-align: left;
@@ -41,4 +41,35 @@
 }
 .hp-down-triangle:after {
   transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
+}
+
+.hp-down-section {
+  @include flex;
+  gap: 4em;
+  height: 100vh;
+  padding-bottom: 25vh;
+  width: 50%;
+  margin: auto;
+}
+
+.hp-down-section-info {
+  @include flex(column, space-between);
+  gap: 2em;
+  height: 50vh;
+  padding: 1em 0;
+}
+
+.hp-down-section-text {
+  font-size: 1.2em;
+  color: var(--gray);
+  text-align: center;
+  padding: 0;
+}
+
+.hp-down-section-logo {
+  height: 18vh;
+}
+
+.hp-down-section-building {
+  height: 55vh;
 }

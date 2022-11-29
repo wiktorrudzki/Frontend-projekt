@@ -10,24 +10,26 @@
 }
 
 .hp-footer-upper {
-  @include flex;
+  // @include flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 6em;
 }
 
 .hp-footer-lower {
-  font-size: 0.8em;
+  font-size: 0.7em;
   color: var(--white);
 }
 
 .hp-footer-ul {
-  @include flex;
+  @include flex(row, space-between);
   gap: 2em;
   list-style: none;
   padding: 0;
 }
 
 .hp-footer-li {
-  font-size: 1.1em;
+  font-size: 1em;
   color: var(--white);
   p {
     margin: 0;
@@ -35,7 +37,7 @@
 }
 
 .hp-footer-logo {
-  height: 2em;
+  height: 1.8em;
 }
 
 .hp-footer-link {
