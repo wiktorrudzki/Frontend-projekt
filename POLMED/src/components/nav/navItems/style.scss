@@ -1,0 +1,85 @@
+@import "../../../styles/global-styles";
+
+// --red: #ff0000;
+// --white: #ffffff;
+// --lime-green: #66cc99;
+// --primary: #0099cc;
+// --light-primary: #0099cc30;
+// --gray: #999999;
+
+$light-blue: #0099cc50;
+$light-blue2: #0099cc20;
+
+.nav-item {
+  width: fit-content;
+  list-style: none;
+  padding: 0.32em 1em;
+  border-radius: 0.9em;
+  color: var(--gray);
+  background-color: transparent;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  &:hover,
+  &:visited:hover {
+    background-color: $light-blue2;
+  }
+  &:active {
+    transform: scale(0.93);
+  }
+}
+
+.nav-item-active {
+  background-color: $light-blue;
+  &:hover {
+    background-color: $light-blue;
+  }
+}
+
+.nav-item-link {
+  text-decoration: none;
+  &:visited {
+    text-decoration: none;
+    color: var(--gray);
+  }
+  &:visited:hover {
+    color: var(--primary);
+  }
+}
+
+.nav-item-link-active {
+  color: var(--primary);
+  &:visited {
+    color: var(--primary);
+  }
+}
+
+.nav-item-hp {
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+}
+
+.nav-item-hp-active {
+  background-color: rgba(255, 255, 255, 0.4);
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.nav-item-link-hp {
+  color: var(--white);
+  &:visited,
+  &:hover,
+  &:visited:hover {
+    color: var(--white);
+  }
+}
+
+.nav-item-link-hp-active {
+  color: var(--white);
+  &:visited,
+  &:hover,
+  &:visited:hover {
+    color: var(--white);
+  }
+}

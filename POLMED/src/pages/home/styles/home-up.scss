@@ -1,0 +1,51 @@
+.hp-up {
+  height: 100vh;
+  background-image: url("../../../img/desktop_background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hp-up-title {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  color: var(--white);
+  font-size: 3.5em;
+  width: 33%;
+  word-wrap: break-word;
+  font-weight: 500;
+}
+
+.hp-up-triangle {
+  position: absolute;
+  bottom: 7%;
+  left: calc(50% - 0.8em);
+  background-color: var(--white);
+  text-align: left;
+  cursor: pointer;
+}
+.hp-up-triangle:before,
+.hp-up-triangle:after {
+  content: "";
+  position: absolute;
+  background-color: inherit;
+}
+.hp-up-triangle,
+.hp-up-triangle:before,
+.hp-up-triangle:after {
+  width: 1.6em;
+  height: 1.6em;
+  border-top-right-radius: 30%;
+}
+
+.hp-up-triangle {
+  transform: rotate(0deg) skewX(-30deg) scale(1, 0.866);
+}
+.hp-up-triangle:before {
+  transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(0, -50%);
+}
+.hp-up-triangle:after {
+  transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
+}
