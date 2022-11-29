@@ -5,11 +5,10 @@
   width: 100%;
   background-color: var(--white);
   color: black;
-  top: 100%;
-  position: absolute;
-  z-index: 1;
   transition: all 1s ease-out;
   overflow: hidden;
+  top: 0;
+  position: relative;
 }
 
 .hp-down-triangle {

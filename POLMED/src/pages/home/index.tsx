@@ -10,23 +10,19 @@ const Home = () => {
 
   const scrollDown = () => {
     if (hpDownRef.current) {
-      hpDownRef.current.style.transform = "translateY(-100%)";
-      setTimeout(() => {
-        if (hpRef.current) hpRef.current.style.zIndex = "1";
-      }, 800);
+      hpDownRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const scrollUp = () => {
-    if (hpDownRef.current) {
-      hpDownRef.current.style.transform = "translateY(0%)";
-      if (hpRef.current) hpRef.current.style.zIndex = "-1";
+    if (hpRef.current) {
+      hpRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <div ref={hpRef} className="hp">
-      <section className="hp-up">
+    <div className="hp">
+      <section ref={hpRef} className="hp-up">
         <h1 className="hp-up-title">Umów się na szybką i bezpieczną wizytę u twojego lekarza.</h1>
         <div onClick={scrollDown} className="hp-up-triangle"></div>
       </section>
@@ -34,7 +30,6 @@ const Home = () => {
         <div onClick={scrollUp} className="hp-down-triangle"></div>
         <HomePageFooter />
       </div>
-      ;
     </div>
   );
 };
