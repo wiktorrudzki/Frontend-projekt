@@ -1,3 +1,4 @@
+import HomePageFooter from "@/components/footers/home-page";
 import { useRef } from "react";
 import "./styles/style.scss";
 import "./styles/home-up.scss";
@@ -31,6 +32,7 @@ const Home = () => {
       </section>
       <div ref={hpDownRef} className="hp-down">
         <div onClick={scrollUp} className="hp-down-triangle"></div>
+        <HomePageFooter />
       </div>
       ;
     </div>

@@ -1,0 +1,45 @@
+@import "../../../styles/global-styles";
+
+.home-page-footer {
+  @include flex(column);
+  background: linear-gradient(100deg, var(--primary), var(--lime-green));
+  padding: 1em 0;
+}
+
+.home-page-footer-upper {
+  @include flex;
+  gap: 6em;
+}
+
+.home-page-footer-lower {
+  font-size: 0.8em;
+  color: var(--white);
+}
+
+.home-page-footer-ul {
+  @include flex;
+  gap: 2em;
+  list-style: none;
+  padding: 0;
+}
+
+.home-page-footer-li {
+  font-size: 1.1em;
+  color: var(--white);
+}
+
+.home-page-footer-li > p {
+  margin: 0;
+}
+
+.home-page-footer-logo {
+  height: 2em;
+}
+
+.home-page-footer-link {
+  text-decoration: underline;
+}
+
+.home-page-footer-link:visited {
+  color: var(--white);
+}
