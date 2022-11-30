@@ -25,7 +25,11 @@ const Home = () => {
   return (
     <div className="hp">
       <section ref={hpRef} className="hp-up">
-        <h1 className="hp-up-title">Umów się na szybką i bezpieczną wizytę u twojego lekarza.</h1>
+        <h1 className="hp-up-title">
+          <span>Umów się na szybką</span>
+          <span>i bezpieczną wizytę</span>
+          <span>u twojego lekarza.</span>
+        </h1>
         <div onClick={scrollDown} className="hp-up-triangle"></div>
       </section>
       <div ref={hpDownRef} className="hp-down">
