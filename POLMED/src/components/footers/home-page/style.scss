@@ -4,8 +4,6 @@
   @include flex(column);
   background: linear-gradient(100deg, var(--primary), var(--lime-green));
   padding: 1em 0;
-  position: absolute;
-  bottom: 0;
   width: 100%;
 }
 
