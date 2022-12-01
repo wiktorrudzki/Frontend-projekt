@@ -1,21 +1,9 @@
 @import "../../../styles/global-styles";
 
-.hp-footer {
-  @include flex(column);
-  background: linear-gradient(100deg, var(--primary), var(--lime-green));
-  padding: 1em 0;
-  width: 100%;
-}
-
 .hp-footer-upper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6em;
-}
-
-.hp-footer-lower {
-  font-size: 0.7em;
-  color: var(--white);
 }
 
 .hp-footer-ul {

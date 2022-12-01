@@ -1,10 +1,11 @@
 import logoWhite from "@/img/logo/logo_white.png";
 import { Link } from "react-router-dom";
 import "./style.scss";
+import "../style.scss";
 
 const HomePageFooter = () => {
   return (
-    <footer className="hp-footer">
+    <footer className="footer">
       <section className="hp-footer-upper">
         <ul className="hp-footer-ul">
           <li className="hp-footer-li">
