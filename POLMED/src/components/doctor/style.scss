@@ -1,0 +1,50 @@
+@import "../../styles/global-styles";
+
+.doctor {
+  @include flex(column);
+  padding: 1.5em 0;
+  gap: 1.35em;
+}
+
+.doctor-img {
+  background-image: url("../../img/doctors/doctor1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  width: 9em;
+  height: 9em;
+  border-radius: 50%;
+}
+
+.doctor-info-wrapper {
+  @include flex(column);
+  gap: 0.7em;
+}
+
+.doctor-feature,
+.doctor-name {
+  img {
+    width: 0.9em;
+  }
+  @include flex;
+  gap: 0.5em;
+}
+
+.doctor-feature {
+  width: 100%;
+  justify-content: flex-start;
+  p {
+    font-size: 0.9em;
+    color: var(--gray);
+    margin: 0;
+    letter-spacing: -0.04em;
+  }
+}
+
+.doctor-name {
+  h5 {
+    margin: 0;
+    font-size: 1em;
+    color: var(--primary);
+  }
+}
