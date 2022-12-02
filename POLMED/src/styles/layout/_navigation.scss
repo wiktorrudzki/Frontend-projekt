@@ -69,50 +69,49 @@
 }
 
 .nav {
-    @include flex;
-    gap: 5em;
-    padding: 1.25em 0;
-    box-shadow: 0 2px 6px rgb(0, 0, 0, 0.15);
+  @include flex;
+  gap: 5em;
+  padding: 1.25em 0;
+  box-shadow: 0 2px 6px rgb(0, 0, 0, 0.15);
+}
+
+.nav-hp {
+  @include flex;
+  gap: 5em;
+  padding: 1.25em 0;
+  background-color: transparent;
+}
+
+.nav-logo {
+  height: 3.75em;
+}
+
+.nav-ul {
+  @include flex;
+  gap: 0.5em;
+  list-style: none;
+}
+
+.nav-btn {
+  width: fit-content;
+  padding: 0.75em 3.5em;
+  font-size: 0.875em;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $color-primary;
+  border-radius: 1.5em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  &:hover {
+    background-color: darken($color-primary, 10%);
   }
-  
-  .nav-hp {
-    @include flex;
-    gap: 5em;
-    padding: 1.25em 0;
-    background-color: transparent;
+}
+
+.nav-btn-hp {
+  color: $color-secondary;
+  background-color: $white;
+  &:hover {
+    background-color: darken(#ffffff, 10%);
   }
-  
-  .nav-logo {
-    height: 3.75em;
-  }
-  
-  .nav-ul {
-    @include flex;
-    gap: 0.5em;
-    list-style: none;
-  }
-  
-  .nav-btn {
-    width: fit-content;
-    padding: 0.75em 3.5em;
-    font-size: 0.875em;
-    text-transform: uppercase;
-    color: $white;
-    background-color: $color-primary;
-    border-radius: 1.5em;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease-out;
-    &:hover {
-      background-color: darken($color-primary, 10%);
-    }
-  }
-  
-  .nav-btn-hp {
-    color: $color-secondary;
-    background-color: $white;
-    &:hover {
-      background-color: darken(#ffffff, 10%);
-    }
-  }
-  
+}
