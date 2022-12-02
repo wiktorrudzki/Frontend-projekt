@@ -1,0 +1,62 @@
+@import "../../styles/global-styles";
+
+.contact-page {
+  @include flex(column);
+  height: 100%;
+  width: fit-content;
+  gap: 1.5em;
+}
+
+.contact-page-title {
+  color: var(--gray);
+  font-weight: 300;
+  font-size: 1.5em;
+  width: 100%;
+  margin: 0;
+}
+
+.contact-page-content {
+  width: 100%;
+  @include flex(row, flex-start);
+  gap: 6em;
+  padding: 0 1em;
+  padding-bottom: 1.25em;
+}
+
+.contact-page-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2em;
+}
+
+.contact-page-info-text-wrapper {
+  @include flex(row, flex-start);
+  gap: 1.5em;
+  div {
+    @include flex(column, flex-start, flex-start);
+    gap: 0.1em;
+    span {
+      font-size: 0.8em;
+      color: var(--gray);
+    }
+  }
+  img {
+    width: 1.2em;
+  }
+}
+
+.contact-page-icons {
+  @include flex(row, flex-start);
+  gap: 3em;
+  img {
+    width: 2.2em;
+    cursor: pointer;
+  }
+}
+
+.contact-page-map {
+  border: 0;
+  width: 45em;
+  height: 15em;
+}

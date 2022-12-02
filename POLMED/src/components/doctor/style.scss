@@ -17,16 +17,17 @@
 }
 
 .doctor-info-wrapper {
-  @include flex(column);
+  @include flex(column, flex-start, stretch);
   gap: 0.7em;
 }
 
 .doctor-feature,
 .doctor-name {
+  width: 100%;
   img {
     width: 0.9em;
   }
-  @include flex;
+  @include flex(row, flex-start);
   gap: 0.5em;
 }
 
@@ -43,6 +44,7 @@
 
 .doctor-name {
   h5 {
+    text-align: left;
     margin: 0;
     font-size: 1em;
     color: var(--primary);
