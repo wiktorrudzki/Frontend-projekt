@@ -36,7 +36,7 @@
 }
 
 .hp-down {
-  height: calc(100vh - 11.125em);
+  height: calc(100vh - (2.5em + 2em * 3 + 0.875em * 3));
   width: 100%;
   background-color: white;
   transition: all 1s ease-out;
