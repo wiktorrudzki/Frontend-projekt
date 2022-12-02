@@ -3,7 +3,6 @@ import NavItem from "./navItems";
 import { navItems, NavItemType } from "./navItems/navItems";
 import logo from "@/img/logo/logo.png";
 import whiteLogo from "@/img/logo/logo_white.png";
-import "./style.scss";
 
 const Nav = () => {
   const location = useLocation();

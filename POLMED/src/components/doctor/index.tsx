@@ -4,7 +4,6 @@ import calendarIcon from "@/img/icons/calendar-solid.svg";
 import stethoscopeIcon from "@/img/icons/stethoscope-solid.svg";
 import moneyIcon from "@/img/icons/money-bills-solid.svg";
 import briefcaseIcon from "@/img/icons/briefcase-medical-solid.svg";
-import "./style.scss";
 
 type Props = {
   photo: string;

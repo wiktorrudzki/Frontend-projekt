@@ -5,7 +5,7 @@ import Pricing from "@/pages/pricing";
 import Contact from "@/pages/contact";
 import MyAccount from "./pages/myAccount";
 import Nav from "@/components/nav";
-import "@/styles/global-styles.scss";
+import "@/styles/main.scss";
 
 const App = () => {
   return (

@@ -1,4 +1,14 @@
-@import "../../../styles/global-styles";
+.footer {
+  @include flex(column);
+  background: $color-gradient;
+  padding: 2em 0;
+  width: 100%;
+}
+
+.footer-copyright {
+  font-size: 0.875em;
+  color: $white;
+}
 
 .hp-footer-upper {
   display: grid;
@@ -15,21 +25,21 @@
 
 .hp-footer-li {
   font-size: 1em;
-  color: var(--white);
+  color: $white;
   p {
     margin: 0;
   }
 }
 
 .hp-footer-logo {
-  height: 1.8em;
+  height: 2.5em;
 }
 
 .hp-footer-link {
   text-decoration: underline;
-  color: var(--white);
+  color: $white;
 }
 
 .hp-footer-link:visited {
-  color: var(--white);
+  color: $white;
 }

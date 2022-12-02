@@ -7,7 +7,6 @@ import envelopeIcon from "@/img/icons/envelope-solid.svg";
 import clockIcon from "@/img/icons/clock-solid.svg";
 import phoneIcon from "@/img/icons/phone-solid.svg";
 import ContactInfo from "./components/ContactInfo";
-import "./style.scss";
 
 const Contact = () => {
   return (
