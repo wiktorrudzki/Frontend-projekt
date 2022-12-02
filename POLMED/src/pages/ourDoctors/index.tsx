@@ -1,5 +1,4 @@
 import Doctor from "@/components/doctor";
-import OtherPageFooter from "@/components/footers/other";
 
 const OurDoctors = () => {
   return (
@@ -28,7 +27,6 @@ const OurDoctors = () => {
         type="pediatra"
         isBooked={true}
       />
-      <OtherPageFooter />
     </>
   );
 };

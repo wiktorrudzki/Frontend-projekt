@@ -5,11 +5,6 @@
   width: 100%;
 }
 
-.footer-copyright {
-  font-size: 0.875em;
-  color: $white;
-}
-
 .hp-footer-upper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -29,10 +24,13 @@
   p {
     margin: 0;
   }
+  &:has(.hp-footer-logo) {
+    height: 2.5em;
+  }
 }
 
 .hp-footer-logo {
-  height: 2.5em;
+  height: 100%;
 }
 
 .hp-footer-link {
@@ -41,5 +39,11 @@
 }
 
 .hp-footer-link:visited {
+  color: $white;
+}
+
+.footer-copyright {
+  font-size: 0.875em;
+  line-height: 1em;
   color: $white;
 }

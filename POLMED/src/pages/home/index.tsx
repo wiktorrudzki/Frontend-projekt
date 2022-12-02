@@ -1,4 +1,3 @@
-import HomePageFooter from "@/components/footers/home-page";
 import { useRef } from "react";
 import building from "@/img/building.jpg";
 import NFZLogo from "@/img/NFZ_logo.svg";
@@ -44,7 +43,6 @@ const Home = () => {
           <img className="hp-down-section-building" src={building} alt="building" />
         </section>
         <img className="hp-down-triangle" onClick={scrollUp} src={triangleBlue} alt="scroll-icon" />
-        <HomePageFooter />
       </div>
     </div>
   );
