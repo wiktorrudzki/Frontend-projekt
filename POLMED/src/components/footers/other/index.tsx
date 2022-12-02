@@ -1,5 +1,3 @@
-import "../style.scss";
-
 const OtherPageFooter = () => {
   return (
     <footer className="footer">

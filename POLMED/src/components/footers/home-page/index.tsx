@@ -1,7 +1,5 @@
 import logoWhite from "@/img/logo/logo_white.png";
 import { Link } from "react-router-dom";
-import "./style.scss";
-import "../style.scss";
 
 const HomePageFooter = () => {
   return (

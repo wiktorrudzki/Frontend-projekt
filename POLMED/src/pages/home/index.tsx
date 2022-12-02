@@ -4,9 +4,6 @@ import building from "@/img/building.jpg";
 import NFZLogo from "@/img/NFZ_logo.svg";
 import triangleBlue from "@/img/icons/caret-blue.svg";
 import triangleWhite from "@/img/icons/caret-white.svg";
-import "./styles/style.scss";
-import "./styles/home-up.scss";
-import "./styles/home-down.scss";
 
 const Home = () => {
   const hpDownRef = useRef<null | HTMLDivElement>(null);

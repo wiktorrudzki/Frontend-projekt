@@ -1,0 +1,118 @@
+.nav-item {
+  width: fit-content;
+  list-style: none;
+  padding: 0.5em 1.25em;
+  border-radius: 1em;
+  background-color: transparent;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  &:hover,
+  &:visited:hover {
+    background-color: $color-primary-light;
+  }
+}
+
+.nav-item-active {
+  background-color: $color-primary-light;
+  &:hover {
+    background-color: $color-primary-light;
+  }
+}
+
+.nav-item-link {
+  color: $default-font-color;
+  text-decoration: none;
+  &:visited {
+    text-decoration: none;
+  }
+  &:visited:hover {
+    color: $color-primary;
+  }
+}
+
+.nav-item-link-active {
+  color: $color-primary;
+  &:visited {
+    color: $color-primary;
+  }
+}
+
+.nav-item-hp {
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+}
+
+.nav-item-hp-active {
+  background-color: rgba(255, 255, 255, 0.4);
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.nav-item-link-hp {
+  color: $white;
+  &:visited,
+  &:hover,
+  &:visited:hover {
+    color: $white;
+  }
+}
+
+.nav-item-link-hp-active {
+  color: $white;
+  &:visited,
+  &:hover,
+  &:visited:hover {
+    color: $white;
+  }
+}
+
+.nav {
+    @include flex;
+    gap: 5em;
+    padding: 1.25em 0;
+    box-shadow: 0 2px 6px rgb(0, 0, 0, 0.15);
+  }
+  
+  .nav-hp {
+    @include flex;
+    gap: 5em;
+    padding: 1.25em 0;
+    background-color: transparent;
+  }
+  
+  .nav-logo {
+    height: 3.75em;
+  }
+  
+  .nav-ul {
+    @include flex;
+    gap: 0.5em;
+    list-style: none;
+  }
+  
+  .nav-btn {
+    width: fit-content;
+    padding: 0.75em 3.5em;
+    font-size: 0.875em;
+    text-transform: uppercase;
+    color: $white;
+    background-color: $color-primary;
+    border-radius: 1.5em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    &:hover {
+      background-color: darken($color-primary, 10%);
+    }
+  }
+  
+  .nav-btn-hp {
+    color: $color-secondary;
+    background-color: $white;
+    &:hover {
+      background-color: darken(#ffffff, 10%);
+    }
+  }
+  
