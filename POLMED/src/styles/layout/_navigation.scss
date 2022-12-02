@@ -10,6 +10,9 @@
   &:visited:hover {
     background-color: $color-primary-light;
   }
+  &:active {
+    transform: scale(0.93);
+  }
 }
 
 .nav-item-active {
