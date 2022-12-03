@@ -57,32 +57,13 @@
   cursor: pointer;
 }
 
-.hp-down-section {
-  @include flex(row, center, stretch);
-  gap: 4em;
-  height: 100vh;
-  height: fit-content;
-  width: 50%;
-  margin: auto;
-}
-
-.hp-down-section-info {
-  @include flex(column, space-between);
-  gap: 2em;
-  height: 100%;
-  padding: 1.5em 0;
-}
-
-.hp-down-section-text {
-  font-size: 1.5em;
+.hp-down-building-photo-section-text {
+  font-size: 1.4em;
   text-align: center;
   margin: 0;
+  width: 20em;
 }
 
-.hp-down-section-logo {
+.hp-down-building-photo-section-logo {
   height: 15vh;
-}
-
-.hp-down-section-building {
-  height: 55vh;
 }

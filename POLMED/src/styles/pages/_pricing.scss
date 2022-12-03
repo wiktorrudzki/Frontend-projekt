@@ -1,0 +1,60 @@
+.pricing-wrapper {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 1.5em 0.5em;
+  gap: 1em;
+}
+
+.pricing-services {
+  @include flex(column, center, flex-start);
+  gap: 1.5em;
+  padding-left: 1em;
+}
+
+.pricing-title {
+  font-weight: 500;
+  float: left;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.pricing-services-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  @include flex(column);
+  gap: 0.4em;
+}
+
+.pricing-services-li {
+  font-size: 0.9em;
+  color: var(--gray);
+  @include flex(row, flex-start);
+  gap: 0.8em;
+  width: 100%;
+}
+
+.pricing-services-li-icon {
+  height: 0.8em;
+}
+
+.pricing-services-text {
+  margin: 0;
+}
+
+.pricing-warning {
+  @include flex;
+  gap: 1em;
+}
+
+.pricing-warning-exlamation-mark {
+  height: 2em;
+}
+
+.pricing-warning-text {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.9em;
+  width: 12.5em;
+}
