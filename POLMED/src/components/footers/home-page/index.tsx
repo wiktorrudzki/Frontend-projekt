@@ -1,9 +1,21 @@
 import logoWhite from "@/img/logo/logo_white.png";
 import { Link } from "react-router-dom";
+import { useRef, useEffect } from "react";
 
 const HomePageFooter = () => {
+  const hpFooter = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const height = hpFooter.current?.clientHeight;
+    const rootElement = document.querySelector(":root");
+
+    if (!height || !rootElement) return;
+
+    (rootElement as HTMLElement).style.setProperty("--hp-footer-height", `${height}px`);
+  }, []);
+
   return (
-    <footer className="footer">
+    <footer ref={hpFooter} className="footer">
       <section className="hp-footer-upper">
         <ul className="hp-footer-ul">
           <li className="hp-footer-li">
