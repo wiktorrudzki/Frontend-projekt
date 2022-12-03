@@ -58,9 +58,10 @@
 }
 
 .hp-down-section {
-  @include flex;
+  @include flex(row, center, stretch);
   gap: 4em;
   height: 100vh;
+  height: fit-content;
   width: 50%;
   margin: auto;
 }
@@ -68,14 +69,14 @@
 .hp-down-section-info {
   @include flex(column, space-between);
   gap: 2em;
-  height: 50vh;
-  padding: 1em 0;
+  height: 100%;
+  padding: 1.5em 0;
 }
 
 .hp-down-section-text {
   font-size: 1.5em;
   text-align: center;
-  padding: 0;
+  margin: 0;
 }
 
 .hp-down-section-logo {
