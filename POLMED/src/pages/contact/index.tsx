@@ -1,4 +1,3 @@
-import OtherPageFooter from "@/components/footers/other";
 import ContactInfo from "./components/ContactInfo";
 import ContactSocial from "./components/ContactSocial";
 
@@ -39,7 +38,6 @@ const Contact = () => {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <OtherPageFooter />
     </>
   );
 };

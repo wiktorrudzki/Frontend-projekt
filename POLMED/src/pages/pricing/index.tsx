@@ -1,5 +1,4 @@
 import BuildingPhotoComponent from "@/components/buildingPhotoComponent";
-import OtherPageFooter from "@/components/footers/other";
 import Service from "./components/Service";
 
 const Pricing = () => {
@@ -26,7 +25,6 @@ const Pricing = () => {
           </section>
         </div>
       </BuildingPhotoComponent>
-      <OtherPageFooter />
     </>
   );
 };
