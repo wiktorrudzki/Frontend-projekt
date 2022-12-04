@@ -1,9 +1,9 @@
 import HomePageFooter from "@/components/footers/home-page";
 import { useRef } from "react";
-import building from "@/img/building.jpg";
-import NFZLogo from "@/img/NFZ_logo.svg";
 import triangleBlue from "@/img/icons/caret-blue.svg";
 import triangleWhite from "@/img/icons/caret-white.svg";
+import BuildingPhotoComponent from "@/components/buildingPhotoComponent";
+import NFZLogo from "@/img/NFZ_logo.svg";
 
 const Home = () => {
   const hpDownRef = useRef<null | HTMLDivElement>(null);
@@ -32,17 +32,13 @@ const Home = () => {
         <img onClick={scrollDown} src={triangleWhite} className="hp-up-triangle" />
       </section>
       <div ref={hpDownRef} className="hp-down">
-        <section className="hp-down-section">
-          <div className="hp-down-section-info">
-            <p className="hp-down-section-text">
-              Dobro naszych pacjentów jest dla nas najważniejsze, dlatego placówka POLmed
-              współpracuje z Narodowym Funduszem Zdrowia w celu zmniejszenia kosztów prowadzonych
-              usług.{" "}
-            </p>
-            <img className="hp-down-section-logo" src={NFZLogo} alt="nfz logo" />
-          </div>
-          <img className="hp-down-section-building" src={building} alt="building" />
-        </section>
+        <BuildingPhotoComponent>
+          <p className="hp-down-building-photo-section-text">
+            Dobro naszych pacjentów jest dla nas najważniejsze, dlatego placówka POLmed współpracuje
+            z Narodowym Funduszem Zdrowia w celu zmniejszenia kosztów prowadzonych usług.{" "}
+          </p>
+          <img className="hp-down-building-photo-section-logo" src={NFZLogo} alt="nfz logo" />
+        </BuildingPhotoComponent>
         <img className="hp-down-triangle" onClick={scrollUp} src={triangleBlue} alt="scroll-icon" />
         <HomePageFooter />
       </div>
