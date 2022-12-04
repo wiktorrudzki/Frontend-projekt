@@ -1,12 +1,12 @@
 type Props = {
   children: React.ReactNode;
-  icon: string;
+  iconClassName: string;
 };
 
-const ContactInfo = ({ children, icon }: Props) => {
+const ContactInfo = ({ children, iconClassName }: Props) => {
   return (
     <div className="contact-page-info-text-wrapper">
-      <img className="contact-page-info-icon" src={icon} />
+      <i className={`contact-page-info--icon ${iconClassName}`}></i>
       <div>{children}</div>
     </div>
   );

@@ -36,7 +36,8 @@
 }
 
 .pricing-services-li-icon {
-  height: 0.8em;
+  @include fa-icon-solid($fa-var-arrow-right);
+  color: $color-secondary;
 }
 
 .pricing-services-text {
@@ -49,7 +50,9 @@
 }
 
 .pricing-warning-exlamation-mark {
-  height: 2em;
+  @include fa-icon-solid($fa-var-triangle-exclamation);
+  font-size: 2em;
+  color: $color-warning;
 }
 
 .pricing-warning-text {

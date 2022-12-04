@@ -1,6 +1,4 @@
 import { useRef } from "react";
-import triangleBlue from "@/img/icons/caret-blue.svg";
-import triangleWhite from "@/img/icons/caret-white.svg";
 import doctorImage from "@/img/doctor.png";
 import BuildingPhotoComponent from "@/components/buildingPhotoComponent";
 import NFZLogo from "@/img/NFZ_logo.svg";
@@ -34,7 +32,7 @@ const Home = () => {
             <img src={doctorImage} className="hp-up-doctor" />
           </div>
         </div>
-        <img onClick={scrollDown} src={triangleWhite} className="hp-up-triangle" />
+        <i className="hp-up-triangle" onClick={scrollDown}></i>
       </section>
       <section ref={hpDownRef} className="hp-down">
         <BuildingPhotoComponent>
@@ -44,7 +42,7 @@ const Home = () => {
           </p>
           <img className="hp-down-building-photo-section-logo" src={NFZLogo} alt="nfz logo" />
         </BuildingPhotoComponent>
-        <img className="hp-down-triangle" onClick={scrollUp} src={triangleBlue} alt="scroll-icon" />
+        <i className="hp-down-triangle" onClick={scrollUp}></i>
       </section>
     </div>
   );
