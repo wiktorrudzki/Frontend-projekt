@@ -1,3 +1,7 @@
+@import "./vendors/fontawesome/scss/fontawesome.scss";
+@import "./vendors/fontawesome/scss/solid.scss";
+@import "./vendors/fontawesome/scss/brands.scss";
+
 @import "./abstracts/mixins";
 
 @import "./base/typography";
@@ -6,6 +10,8 @@
 
 @import "./components/doctor";
 @import "./components/building_photo";
+@import "./components/contact/contact_info";
+@import "./components/contact/contact_social";
 
 @import "./layout/footer";
 @import "./layout/navigation";

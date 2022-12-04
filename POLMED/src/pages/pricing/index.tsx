@@ -1,7 +1,6 @@
 import BuildingPhotoComponent from "@/components/buildingPhotoComponent";
 import OtherPageFooter from "@/components/footers/other";
 import Service from "./components/Service";
-import triangleExclamationIcon from "@/img/icons/triangle-exclamation-solid.svg";
 
 const Pricing = () => {
   return (
@@ -19,11 +18,7 @@ const Pricing = () => {
             </ul>
           </section>
           <section className="pricing-warning">
-            <img
-              className="pricing-warning-exlamation-mark"
-              src={triangleExclamationIcon}
-              alt="exclamation mark"
-            />
+            <i className="pricing-warning-exlamation-mark fa-solid fa-triangle-exclamation"></i>
             <p className="pricing-warning-text">
               Płatności za wykonane usługi realizowane są jedynie w placówce (możliwa płatność kartą
               lub gotówką)

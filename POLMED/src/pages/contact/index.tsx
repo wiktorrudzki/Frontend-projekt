@@ -1,12 +1,6 @@
 import OtherPageFooter from "@/components/footers/other";
-import facebookIcon from "@/img/icons/facebook.svg";
-import instagramIcon from "@/img/icons/instagram.svg";
-import whatsappIcon from "@/img/icons/whatsapp.svg";
-import locationDotIcon from "@/img/icons/location-dot-solid.svg";
-import envelopeIcon from "@/img/icons/envelope-solid.svg";
-import clockIcon from "@/img/icons/clock-solid.svg";
-import phoneIcon from "@/img/icons/phone-solid.svg";
 import ContactInfo from "./components/ContactInfo";
+import ContactSocial from "./components/ContactSocial";
 
 const Contact = () => {
   return (
@@ -15,27 +9,27 @@ const Contact = () => {
         <h3 className="contact-page-title">Kontakt:</h3>
         <section className="contact-page-content">
           <div className="contact-page-info">
-            <ContactInfo icon={locationDotIcon}>
+            <ContactInfo iconClassName="contact-page-info--icon__location">
               <span>POLmed</span>
               <span>ul. Pawia 5</span>
               <span>31-154 Kraków</span>
             </ContactInfo>
-            <ContactInfo icon={clockIcon}>
+            <ContactInfo iconClassName="contact-page-info--icon__clock">
               <span>Pn. - pt.</span>
               <span>10:00 - 18:00</span>
             </ContactInfo>
-            <ContactInfo icon={envelopeIcon}>
+            <ContactInfo iconClassName="contact-page-info--icon__envelope">
               <span>biuro@polmed.pl</span>
             </ContactInfo>
-            <ContactInfo icon={phoneIcon}>
+            <ContactInfo iconClassName="contact-page-info--icon__phone">
               <span>+48 123 456 789</span>
               <span>+48 12 34 56 789</span>
             </ContactInfo>
           </div>
-          <div className="contact-page-icons">
-            <img src={facebookIcon} alt="facebook icon" />
-            <img src={instagramIcon} alt="instagram icon" />
-            <img src={whatsappIcon} alt="whatsapp icon" />
+          <div className="contact-page-social">
+            <ContactSocial href="#" iconClassName="contact-page-social--icon__facebook" />
+            <ContactSocial href="#" iconClassName="contact-page-social--icon__instagram" />
+            <ContactSocial href="#" iconClassName="contact-page-social--icon__whatsapp" />
           </div>
         </section>
         <iframe

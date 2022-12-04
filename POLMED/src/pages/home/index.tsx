@@ -1,7 +1,5 @@
 import HomePageFooter from "@/components/footers/home-page";
 import { useRef } from "react";
-import triangleBlue from "@/img/icons/caret-blue.svg";
-import triangleWhite from "@/img/icons/caret-white.svg";
 import BuildingPhotoComponent from "@/components/buildingPhotoComponent";
 import NFZLogo from "@/img/NFZ_logo.svg";
 
@@ -29,7 +27,7 @@ const Home = () => {
           <span>i bezpieczną wizytę</span>
           <span>u twojego lekarza.</span>
         </h1>
-        <img onClick={scrollDown} src={triangleWhite} className="hp-up-triangle" />
+        <i onClick={scrollDown} className="hp-up-triangle" />
       </section>
       <div ref={hpDownRef} className="hp-down">
         <BuildingPhotoComponent>
@@ -39,7 +37,7 @@ const Home = () => {
           </p>
           <img className="hp-down-building-photo-section-logo" src={NFZLogo} alt="nfz logo" />
         </BuildingPhotoComponent>
-        <img className="hp-down-triangle" onClick={scrollUp} src={triangleBlue} alt="scroll-icon" />
+        <i className="hp-down-triangle" onClick={scrollUp} />
         <HomePageFooter />
       </div>
     </div>

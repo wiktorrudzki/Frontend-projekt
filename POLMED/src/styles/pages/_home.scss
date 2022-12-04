@@ -35,9 +35,12 @@
 .hp-up-triangle {
   position: absolute;
   bottom: 5%;
-  width: 3em;
-  left: calc(50% - 1.5em);
+  left: calc(50%);
+  transform: translateX(-50%);
   cursor: pointer;
+  @include fa-icon-solid($fa-var-caret-down);
+  color: $white;
+  font-size: 4em;
 }
 
 .hp-down {
@@ -52,9 +55,11 @@
 }
 
 .hp-down-triangle {
-  width: 3em;
   transform: rotate(180deg);
   cursor: pointer;
+  @include fa-icon-solid($fa-var-caret-down);
+  color: $color-primary;
+  font-size: 4em;
 }
 
 .hp-down-building-photo-section-text {

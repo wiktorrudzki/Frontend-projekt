@@ -1,0 +1,40 @@
+.contact-page-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2em;
+}
+
+.contact-page-info-text-wrapper {
+  @include flex(row, flex-start);
+  gap: 1.5em;
+  div {
+    @include flex(column, flex-start, flex-start);
+    gap: 0.1em;
+    span {
+      font-size: 0.8em;
+      color: var(--gray);
+    }
+  }
+}
+
+.contact-page-info--icon {
+  color: $color-secondary;
+  font-size: 1.25em;
+}
+
+.contact-page-info--icon__location {
+  @include fa-icon-solid($fa-var-location-dot);
+}
+
+.contact-page-info--icon__clock {
+  @include fa-icon-solid($fa-var-clock);
+}
+
+.contact-page-info--icon__envelope {
+  @include fa-icon-solid($fa-var-envelope);
+}
+
+.contact-page-info--icon__phone {
+  @include fa-icon-solid($fa-var-phone);
+}
