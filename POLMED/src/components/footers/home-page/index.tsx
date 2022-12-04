@@ -2,20 +2,24 @@ import logoWhite from "@/img/logo/logo_white.png";
 import { Link } from "react-router-dom";
 import { useRef, useEffect } from "react";
 
+function updateHpFooterHeightVar(hpFooterRef: React.RefObject<HTMLElement>) {
+  const rootElement = document.querySelector(":root");
+  const footerHeight = hpFooterRef.current?.clientHeight;
+
+  if (!footerHeight || !rootElement) return;
+
+  (rootElement as HTMLElement).style.setProperty("--hp-footer-height", `${footerHeight}px`);
+}
+
 const HomePageFooter = () => {
-  const hpFooter = useRef<HTMLElement>(null);
+  const hpFooterRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const height = hpFooter.current?.clientHeight;
-    const rootElement = document.querySelector(":root");
-
-    if (!height || !rootElement) return;
-
-    (rootElement as HTMLElement).style.setProperty("--hp-footer-height", `${height}px`);
-  }, []);
+    updateHpFooterHeightVar(hpFooterRef);
+  }, [hpFooterRef]);
 
   return (
-    <footer ref={hpFooter} className="footer">
+    <footer ref={hpFooterRef} className="footer">
       <section className="hp-footer-upper">
         <ul className="hp-footer-ul">
           <li className="hp-footer-li">
