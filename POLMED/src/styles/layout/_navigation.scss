@@ -1,3 +1,53 @@
+.nav {
+  @include flex;
+  gap: 5em;
+  padding: 0.6em 0;
+  width: 100%;
+}
+
+.nav-hp {
+  background-color: transparent;
+  z-index: 1;
+}
+
+.nav-other {
+  box-shadow: 0 2px 6px rgb(0, 0, 0, 0.15);
+}
+
+.nav-logo {
+  height: 3.75em;
+}
+
+.nav-ul {
+  @include flex;
+  gap: 0.5em;
+  list-style: none;
+}
+
+.nav-btn {
+  width: fit-content;
+  padding: 0.75em 3.5em;
+  font-size: 0.875em;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $color-primary;
+  border-radius: 1.5em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  &:hover {
+    background-color: darken($color-primary, 10%);
+  }
+}
+
+.nav-btn-hp {
+  color: $color-secondary;
+  background-color: $white;
+  &:hover {
+    background-color: darken(#ffffff, 10%);
+  }
+}
+
 .nav-item {
   width: fit-content;
   list-style: none;
@@ -71,53 +121,93 @@
   }
 }
 
-.nav {
-  @include flex;
-  gap: 5em;
-  padding: 0.6em 0;
-  box-shadow: 0 2px 6px rgb(0, 0, 0, 0.15);
-  width: 100%;
-}
-
-.nav-hp {
-  @include flex;
-  gap: 5em;
-  padding: 0.6em 0;
-  background-color: transparent;
-  z-index: 1;
-  width: 100%;
-}
-
-.nav-logo {
-  height: 3.75em;
-}
-
-.nav-ul {
-  @include flex;
-  gap: 0.5em;
-  list-style: none;
-}
-
-.nav-btn {
-  width: fit-content;
-  padding: 0.75em 3.5em;
-  font-size: 0.875em;
-  text-transform: uppercase;
-  color: $white;
-  background-color: $color-primary;
-  border-radius: 1.5em;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease-out;
-  &:hover {
-    background-color: darken($color-primary, 10%);
+@media (max-width: 1234px) {
+  .nav {
+    gap: 2.5em;
+    padding: 0.6em 1em;
+  }
+  .nav-logo {
+    height: 3.2em;
+  }
+  .nav-ul {
+    gap: 0.4em;
+  }
+  .nav-btn {
+    padding: 0.7em 3em;
+    font-size: 0.85em;
+  }
+  .nav-item {
+    padding: 0.4em 1em;
+  }
+  .nav-item-link {
+    font-size: 0.9em;
+  }
+  .nav-btn {
+    padding: 0.7em 3em;
+    font-size: 0.8em;
   }
 }
 
-.nav-btn-hp {
-  color: $color-secondary;
-  background-color: $white;
-  &:hover {
-    background-color: darken(#ffffff, 10%);
+@media (max-width: 1024px) {
+  .nav {
+    @include flex(row, space-between);
+    padding: 1em 1.5em;
+  }
+  .nav-logo {
+    height: 3.2em;
+  }
+  .nav-bars-icon {
+    height: 2em;
+    cursor: pointer;
+  }
+  .nav-ul {
+    margin: 0;
+    padding: 0 6%;
+    height: 100vh;
+    position: fixed;
+    left: 100%;
+    top: 0;
+    background-color: $white;
+    @include flex(column, space-evenly);
+    transition: 0.5s ease-in-out;
+  }
+  .nav-ul-wrapper {
+    @include flex(column, center, stretch);
+    gap: 1em;
+    div {
+      @include flex(column);
+      gap: 0.8em;
+      img {
+        height: 2.5em;
+      }
+      h2 {
+        font-size: 1.4em;
+        color: $default-font-color;
+        span {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+  .nav-btn {
+    padding: 0.7em 3em;
+    font-size: 0.85em;
+  }
+  .nav-item {
+    padding: 0.5em 1em;
+    @include flex;
+    width: max-content;
+    gap: 0.5em;
+  }
+  .nav-item-icon {
+    height: 1em;
+  }
+  .nav-item-link {
+    font-size: 1em;
+  }
+  //TODO button styles made by Adrian here
+  .nav-btn {
+    padding: 0.7em 3em;
+    font-size: 0.8em;
   }
 }
