@@ -1,103 +1,39 @@
-.login-button {
+.btn {
     font-size: 0.8em;
-    border-radius: 1em;
-    padding: 0.7em 2.75em 0.7em 2.75em;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: bold;
-    background-color: $color-secondary-light;
-    color: $color-secondary;
-    border: none;
 }
-.mainpage-login-button {
-    font-size: 0.8em;
+
+.btn-primary {
     border-radius: 1.5em;
-    padding: 0.9em 3.5em 0.9em 3.5em;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: $white;
-    color: $color-secondary;
-    border: none;
-}
-
-.doctors-appointment-button {
-    font-size: 0.8em;
-    border-radius: 1em;
-    padding: 0.6em 4.75em 0.6em 4.75em;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: bold;
+    padding: 0.75em 2.75em 0.75em 2.75em;
+    width: 12.5em;
     background-color: $color-secondary-light;
     color: $color-secondary;
     border: none;
 }
-.summary-appointment-button {
-    font-size: 0.8em;
-    border-radius: 1em;
-    padding: 0.7em 2.75em 0.7em 2.75em;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: bold;
+.btn-secondary {
+    border-radius: 1.5em;
+    padding: 0.65em 2em 0.65em 2em;
+    width: 16.125em;
     background-color: $color-secondary-light;
     color: $color-secondary;
     border: none;
 }
-
-.next-button {
-    font-size: 0.8em;
-    border-radius: 1em;
-    padding: 0.7em 4.5em 0.7em 4.5em;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: $color-secondary-light;
-    color: $color-secondary;
-    border: none;
-}
-.previous-button {
-    font-size: 0.8em;
-    border-radius: 1em;
-    padding: 0.7em 4.5em 0.7em 4.5em;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: bold;
+.btn-tertiary {
+    border-radius: 1.5em;
+    padding: 0.75em 2.75em 0.75em 2.75em;
+    width: 12.5em;
     background-color: $color-primary-light;
     color: $color-primary;
     border: none;
 }
 
-.mainpage-button {
-    font-size: 0.8em;
-    border-radius: 1em;
-    padding: 0.7em 2.75em 0.7em 2.75em;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: $color-secondary-light;
-    color: $color-secondary;
-    border: none;
-}
-
-.signup-button {
-    font-size: 0.8em;
-    border-radius: 1em;
-    padding: 0.7em 2.75em 0.7em 2.75em;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: $color-secondary-light;
-    color: $color-secondary;
-    border: none;
-}
-
-.cancel-button {
-    font-size: 0.8em;
+.btn-warning {
     border-radius: 1.5em;
     padding: 0.7em 2em 0.7em 2em;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: bold;
+    width: 8.5em;
     background-color: $white;
     color: $color-warning;
     border-color: $color-warning;
