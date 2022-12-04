@@ -58,7 +58,7 @@
   cursor: pointer;
   &:hover,
   &:visited:hover {
-    background-color: $color-primary-light;
+    background-color: $color-primary-extra-light;
   }
   &:active {
     transform: scale(0.93);
@@ -197,10 +197,10 @@
     padding: 0.5em 1em;
     @include flex;
     width: max-content;
-    gap: 0.5em;
+    gap: 0.7em;
   }
   .nav-item-icon {
-    height: 1em;
+    width: 1em;
   }
   .nav-item-link {
     font-size: 1em;

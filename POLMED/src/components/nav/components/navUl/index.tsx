@@ -6,12 +6,15 @@ import userIcon from "@/img/icons/user-solid.svg";
 type Props = {
   path: string;
   type: "desktop" | "mobile";
+  showMenu?: boolean;
+  setShowMenu?: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const NavUl = ({ path, type }: Props) => {
   const ulRef = useRef<null | HTMLUListElement>(null);
 
   useEffect(() => {
+    //nie mam pojecia jaki typ pasuje tutaj :|
     function handleClickOutside(e: any) {
       console.log("xd");
       if (
