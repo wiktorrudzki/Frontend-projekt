@@ -4,11 +4,11 @@ import triangleExclemationIcon from "@/img/icons/triangle-exclamation-solid.svg"
 type Props = {
   label: string;
   name: string;
-  errorEmptyMsg: string;
+  errorEmptyMsg?: string;
   errorWrongMsg: string;
   inputPattern: string;
-  maxInputLength: number;
-  required: boolean;
+  maxInputLength?: number;
+  required?: boolean;
 };
 
 function Input({
@@ -17,8 +17,8 @@ function Input({
   errorEmptyMsg,
   errorWrongMsg,
   inputPattern,
-  maxInputLength,
-  required
+  maxInputLength = 50,
+  required = false
 }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const iconRef = useRef<HTMLImageElement>(null);
@@ -30,6 +30,10 @@ function Input({
     event.preventDefault();
 
     if (event.target.value === "") {
+      if (!errorEmptyMsg) {
+        validHandler();
+        return;
+      }
       setWarningMsg(errorEmptyMsg);
     } else {
       setWarningMsg(errorWrongMsg);
@@ -40,7 +44,6 @@ function Input({
   }
 
   function validHandler() {
-    console.log("valid");
     setWarningMsg("");
 
     inputRef.current?.classList.remove("text-input--invalid");
