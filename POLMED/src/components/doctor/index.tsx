@@ -32,8 +32,8 @@ const Doctor = ({ photo, name, type, price, reason, date, isBooked }: Props) => 
           />
         )}
         <VisitInfo content={type} icon={stethoscopeIcon} />
-        {reason && <VisitInfo content={`Cel wizyty: ${date}`} icon={briefcaseIcon} />}
-        {price && <VisitInfo content={`Koszt: ${price}`} icon={moneyIcon} />}
+        {reason && <VisitInfo content={`Cel wizyty: ${reason}`} icon={briefcaseIcon} />}
+        {price && <VisitInfo content={`Koszt: ${price}zł`} icon={moneyIcon} />}
       </div>
     </div>
   );

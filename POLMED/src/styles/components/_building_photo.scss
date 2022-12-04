@@ -1,0 +1,17 @@
+.building-photo-section {
+  @include flex(row, center, stretch);
+  gap: 4em;
+  width: fit-content;
+  margin: auto;
+}
+
+.building-photo-section-info {
+  @include flex(column, space-between);
+  gap: 2em;
+  height: 100%;
+  padding: 1.5em 0;
+}
+
+.building-photo-section-building {
+  height: 50vh;
+}
