@@ -1,5 +1,4 @@
 import BuildingPhotoComponent from "@/components/buildingPhotoComponent";
-import OtherPageFooter from "@/components/footers/other";
 import Service from "./components/Service";
 import triangleExclamationIcon from "@/img/icons/triangle-exclamation-solid.svg";
 
@@ -31,7 +30,6 @@ const Pricing = () => {
           </section>
         </div>
       </BuildingPhotoComponent>
-      <OtherPageFooter />
     </>
   );
 };

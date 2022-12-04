@@ -1,4 +1,3 @@
-import OtherPageFooter from "@/components/footers/other";
 import facebookIcon from "@/img/icons/facebook.svg";
 import instagramIcon from "@/img/icons/instagram.svg";
 import whatsappIcon from "@/img/icons/whatsapp.svg";
@@ -45,7 +44,6 @@ const Contact = () => {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <OtherPageFooter />
     </>
   );
 };
