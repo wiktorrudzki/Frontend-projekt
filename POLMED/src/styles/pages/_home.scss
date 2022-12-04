@@ -1,25 +1,29 @@
 .hp {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  height: fit-content;
   width: 100%;
-  overflow-y: hidden;
 }
 
 .hp-up {
   height: 100vh;
-  background-image: url("../../img/desktop_background.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: $color-gradient;
   position: relative;
+  @include flex;
+}
+
+.hp-up-columns {
+  @include flex;
+}
+
+.hp-up-column {
+  width: 25em;
+}
+
+.hp-up-doctor {
+  position: absolute;
+  bottom: 0;
+  max-height: 80vh;
 }
 
 .hp-up-title {
-  position: absolute;
-  top: 20%;
-  left: 15%;
   color: white;
   font-size: 4.5em;
   width: fit-content;
@@ -41,7 +45,8 @@
 }
 
 .hp-down {
-  height: 100vh;
+  // variable --hp-footer-height is generated from home page react component
+  height: calc(100vh - var(--hp-footer-height));
   width: 100%;
   background-color: white;
   transition: all 1s ease-out;
@@ -52,9 +57,9 @@
 }
 
 .hp-down-triangle {
-  width: 3em;
+  @extend .hp-up-triangle;
+  bottom: 2%;
   transform: rotate(180deg);
-  cursor: pointer;
 }
 
 .hp-down-building-photo-section-text {
@@ -65,5 +70,5 @@
 }
 
 .hp-down-building-photo-section-logo {
-  height: 15vh;
+  height: 8em;
 }

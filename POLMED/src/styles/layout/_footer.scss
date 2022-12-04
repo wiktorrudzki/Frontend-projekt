@@ -1,15 +1,8 @@
 .footer {
   @include flex(column);
-  gap: 1.5em;
   background: $color-gradient;
-  padding: 1.5em 0;
+  padding: 2em 0;
   width: 100%;
-}
-
-.footer-copyright {
-  font-size: 0.875em;
-  margin: 0;
-  color: $white;
 }
 
 .hp-footer-upper {
@@ -32,10 +25,13 @@
   p {
     margin: 0;
   }
+  &:has(.hp-footer-logo) {
+    height: 2.5em;
+  }
 }
 
 .hp-footer-logo {
-  height: 2.5em;
+  height: 100%;
 }
 
 .hp-footer-link {
@@ -44,5 +40,11 @@
 }
 
 .hp-footer-link:visited {
+  color: $white;
+}
+
+.footer-copyright {
+  font-size: 0.875em;
+  line-height: 1em;
   color: $white;
 }
