@@ -1,10 +1,10 @@
 type Props = {
     content: string;
-    className: "btn-primary" | "btn-secondary" | "btn-tertiary" | "btn-warning";
+    btnType: "btn-primary" | "btn-secondary" | "btn-tertiary" | "btn-warning";
 };
 
-const Button = ({content, className}:Props) => {
-    return <button className={`btn ${className}`}>{content}</button>;
+const Button = ({content, btnType}:Props) => {
+    return <button className={`btn ${btnType}`}>{content}</button>;
 };
 
 export default Button;
