@@ -1,9 +1,4 @@
 import VisitInfo from "./components/VisitInfo";
-import doctorIcon from "@/img/icons/user-doctor-solid.svg";
-import calendarIcon from "@/img/icons/calendar-solid.svg";
-import stethoscopeIcon from "@/img/icons/stethoscope-solid.svg";
-import moneyIcon from "@/img/icons/money-bills-solid.svg";
-import briefcaseIcon from "@/img/icons/briefcase-medical-solid.svg";
 
 type Props = {
   photo: string;
@@ -22,18 +17,25 @@ const Doctor = ({ photo, name, type, price, reason, date, isBooked }: Props) => 
       <div className="doctor-img"></div>
       <div className="doctor-info-wrapper">
         <div className="doctor-name">
-          <img src={doctorIcon} />
+          <i className="doctor-name--doctor-icon"></i>
           <h5>{name}</h5>
         </div>
         {date && (
           <VisitInfo
             content={`${isBooked ? "Wybrany termin: " : "Najbliższy wolny termin: "}: ${date}`}
-            icon={calendarIcon}
+            iconClassName="doctor-feature--icon__calendar"
           />
         )}
-        <VisitInfo content={type} icon={stethoscopeIcon} />
-        {reason && <VisitInfo content={`Cel wizyty: ${reason}`} icon={briefcaseIcon} />}
-        {price && <VisitInfo content={`Koszt: ${price}zł`} icon={moneyIcon} />}
+        <VisitInfo content={type} iconClassName="doctor-feature--icon__stethoscope" />
+        {reason && (
+          <VisitInfo
+            content={`Cel wizyty: ${reason}`}
+            iconClassName="doctor-feature--icon__briefcase"
+          />
+        )}
+        {price && (
+          <VisitInfo content={`Koszt: ${price}zł`} iconClassName="doctor-feature--icon__money" />
+        )}
       </div>
     </div>
   );
