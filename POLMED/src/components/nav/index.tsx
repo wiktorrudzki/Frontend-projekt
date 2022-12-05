@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/img/logo/logo.png";
 import whiteLogo from "@/img/logo/logo_white.png";
-import barsIcon from "@/img/icons/bars-solid.svg";
 import NavUl from "./components/navUl";
 
 const Nav = () => {
@@ -39,7 +38,10 @@ const Nav = () => {
         <img className="nav-logo" src={path === "/" ? whiteLogo : logo} alt="logo" />
       </Link>
       {windowSize[0] <= 1024 && (
-        <img onClick={toggleMenu} className="nav-bars-icon" src={barsIcon} alt="menu icon" />
+        <i
+          onClick={toggleMenu}
+          className={`${"nav-bars-icon"} ${path === "/" ? "nav-bars-icon-white" : ""}`}
+        />
       )}
       {windowSize[0] <= 1024 ? (
         <NavUl path={path} type="mobile" />

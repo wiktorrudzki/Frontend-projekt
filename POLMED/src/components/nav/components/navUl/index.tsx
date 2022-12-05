@@ -17,7 +17,6 @@ const NavUl = ({ path, type }: Props) => {
   useEffect(() => {
     //nie mam pojecia jaki typ pasuje tutaj :|
     function handleClickOutside(e: any) {
-      console.log("xd");
       if (
         ulRef.current &&
         !ulRef.current.contains(e.target) &&
@@ -47,6 +46,7 @@ const NavUl = ({ path, type }: Props) => {
             homePage={true}
             active={path === item.url}
             icon={item.icon}
+            ulRef={ulRef}
           />
         ))
       : navItems.map((item: NavItemType) => (
@@ -58,6 +58,7 @@ const NavUl = ({ path, type }: Props) => {
             homePage={false}
             active={path === item.url}
             icon={item.icon}
+            ulRef={ulRef}
           />
         ));
 
@@ -67,7 +68,7 @@ const NavUl = ({ path, type }: Props) => {
         <ul ref={ulRef} className="nav-ul">
           <div className="nav-ul-wrapper">
             <div>
-              <img src={userIcon} alt="user icon" />
+              <i className="na-ul-wrapper-user-icon" />
               <h2>
                 Witaj, <span>Jan!</span>
               </h2>

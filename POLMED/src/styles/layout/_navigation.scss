@@ -19,10 +19,27 @@
   height: 3.75em;
 }
 
+.nav-bars-icon {
+  @include fa-icon-solid($fa-var-bars);
+  color: $default-font-color;
+  transform: scale(2);
+  cursor: pointer;
+}
+
+.nav-bars-icon-white {
+  color: $white;
+}
+
 .nav-ul {
   @include flex;
   gap: 0.5em;
   list-style: none;
+}
+
+.na-ul-wrapper-user-icon {
+  @include fa-icon-solid($fa-var-user);
+  color: $color-primary;
+  transform: scale(2.2);
 }
 
 .nav-btn {
@@ -49,7 +66,7 @@
   }
 }
 
-.nav-item {
+.nav-item-link {
   width: fit-content;
   list-style: none;
   padding: 0.5em 1.25em;
@@ -57,9 +74,15 @@
   background-color: transparent;
   transition: all 0.2s ease-out;
   cursor: pointer;
+  text-decoration: none;
+  color: $default-font-color;
+  &:visited {
+    text-decoration: none;
+  }
   &:hover,
   &:visited:hover {
     background-color: $color-primary-extra-light;
+    color: $color-primary;
   }
   &:active {
     transform: scale(0.93);
@@ -84,59 +107,41 @@
   }
 }
 
-.nav-item-active {
+.nav-item-link-active {
+  color: $color-primary;
   background-color: $color-primary-light;
   &:hover {
     background-color: $color-primary-light;
   }
-}
-
-.nav-item-link {
-  color: $default-font-color;
-  text-decoration: none;
-  &:visited {
-    text-decoration: none;
-  }
-  &:visited:hover {
-    color: $color-primary;
-  }
-}
-
-.nav-item-link-active {
-  color: $color-primary;
   &:visited {
     color: $color-primary;
-  }
-}
-
-.nav-item-hp {
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-  }
-}
-
-.nav-item-hp-active {
-  background-color: rgba(255, 255, 255, 0.4);
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.4);
   }
 }
 
 .nav-item-link-hp {
   color: $white;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
   &:visited,
   &:hover,
   &:visited:hover {
     color: $white;
+    background-color: rgba(255, 255, 255, 0.25);
   }
 }
 
 .nav-item-link-hp-active {
   color: $white;
+  background-color: rgba(255, 255, 255, 0.4);
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
   &:visited,
   &:hover,
   &:visited:hover {
     color: $white;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 }
 
@@ -155,10 +160,10 @@
     padding: 0.7em 3em;
     font-size: 0.85em;
   }
-  .nav-item {
+  .nav-item-link {
     padding: 0.4em 1em;
   }
-  .nav-item-link {
+  .nav-item-li {
     font-size: 0.9em;
   }
   .nav-btn {
@@ -177,10 +182,6 @@
   }
   .nav-logo {
     height: 3.2em;
-  }
-  .nav-bars-icon {
-    height: 2em;
-    cursor: pointer;
   }
   .nav-ul {
     margin: 0;
@@ -215,7 +216,7 @@
     padding: 0.7em 3em;
     font-size: 0.85em;
   }
-  .nav-item {
+  .nav-item-link {
     padding: 0.5em 1em;
     @include flex;
     width: max-content;
@@ -224,7 +225,7 @@
   .nav-item-icon {
     width: 1em;
   }
-  .nav-item-link {
+  .nav-item-li {
     font-size: 1em;
   }
   //TODO button styles made by Adrian here
