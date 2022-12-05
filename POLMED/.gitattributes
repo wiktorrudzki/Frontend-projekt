@@ -1,0 +1,4 @@
+*.tsx eol=crlf
+*.ts eol=crlf
+*.scss eol=crlf
+

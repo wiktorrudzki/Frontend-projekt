@@ -45,9 +45,9 @@
 }
 
 .form-field--wrapper__warning-icon {
-  // @include fa-icon-solid($fa-var-triangle-exclamation);
+  @include fa-icon-solid($fa-var-triangle-exclamation);
   width: 1em;
-  // color: $color-primary;
+  color: $color-primary;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

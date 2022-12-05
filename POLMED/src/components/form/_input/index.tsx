@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import triangleExclemationIcon from "@/img/icons/triangle-exclamation-solid.svg";
 
 type Props = {
   label: string;
@@ -58,7 +57,7 @@ function Input({
     <div className="form-field">
       <label htmlFor={name} className="form-field--label">
         {label}
-        {required ? <span className="form-field--label__star">*</span> : ""}
+        {required && <span className="form-field--label__star">*</span>}
       </label>
       <div className="form-field--wrapper">
         <input
@@ -73,11 +72,7 @@ function Input({
           maxLength={maxInputLength}
           required={required}
         />
-        <img
-          className="form-field--wrapper__warning-icon hidden"
-          src={triangleExclemationIcon}
-          ref={iconRef}
-        />
+        <i className="form-field--wrapper__warning-icon hidden" ref={iconRef}></i>
       </div>
       <p ref={warningRef} className="form-field--warning-msg">
         {warningMsg}
