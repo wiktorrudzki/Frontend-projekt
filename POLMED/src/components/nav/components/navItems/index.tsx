@@ -10,12 +10,15 @@ type Props = {
 };
 
 const NavItem = ({ content, url, active, homePage, type, icon }: Props) => {
+  console.log(icon);
+
   return (
     <>
       {type === "mobile" ? (
         <li className={`nav-item ${active ? "nav-item-active" : ""}`}>
           {/* TODO CHANGE ICONS COLOR DEPENDING ON CURRENT ROUTE (AT FIRST WE HAVE TO SOLVE THE TASK WITH SVG ICONS FILL) */}
-          <img className="nav-item-icon" src={icon} alt="icon" />
+          {/* <img className="nav-item-icon" src={icon} alt="icon" /> */}
+          <i className={`${icon} ${active ? "nav-item-icon-active" : ""}`}></i>
           <Link className={`nav-item-link ${active ? "nav-item-link-active" : ""}`} to={url}>
             {content}
           </Link>

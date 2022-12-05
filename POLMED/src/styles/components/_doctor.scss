@@ -38,6 +38,26 @@
     margin: 0;
     letter-spacing: -0.04em;
   }
+
+  .doctor-feature--icon {
+    font-size: 0.9em;
+  }
+
+  .doctor-feature--icon__calendar {
+    @include fa-icon-solid($fa-var-calendar);
+  }
+
+  .doctor-feature--icon__stethoscope {
+    @include fa-icon-solid($fa-var-stethoscope);
+  }
+
+  .doctor-feature--icon__briefcase {
+    @include fa-icon-solid($fa-var-briefcase);
+  }
+
+  .doctor-feature--icon__money {
+    @include fa-icon-solid($fa-var-money-bills);
+  }
 }
 
 .doctor-name {
@@ -45,6 +65,14 @@
     text-align: left;
     margin: 0;
     font-size: 1em;
+  }
+
+  .doctor-name--doctor-icon {
+    @include fa-icon-solid($fa-var-user-doctor);
+  }
+
+  .doctor-name--doctor-icon,
+  h5 {
     color: $color-primary;
   }
 }

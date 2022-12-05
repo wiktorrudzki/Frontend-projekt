@@ -7,6 +7,7 @@
 
 .nav-hp {
   background-color: transparent;
+  position: absolute;
   z-index: 1;
 }
 
@@ -62,6 +63,24 @@
   }
   &:active {
     transform: scale(0.93);
+  }
+  .nav-item-doctor-icon {
+    @include fa-icon-solid($fa-var-user-doctor);
+  }
+  .nav-item-home-icon {
+    @include fa-icon-solid($fa-var-home);
+  }
+  .nav-item-money-icon {
+    @include fa-icon-solid($fa-var-money-bills);
+  }
+  .nav-item-phone-icon {
+    @include fa-icon-solid($fa-var-phone);
+  }
+  .nav-item-user-icon {
+    @include fa-icon-solid($fa-var-user);
+  }
+  .nav-item-icon-active {
+    color: $color-primary;
   }
 }
 
@@ -126,9 +145,6 @@
     gap: 2.5em;
     padding: 0.6em 1em;
   }
-  .nav-other {
-    box-shadow: none;
-  }
   .nav-logo {
     height: 3.2em;
   }
@@ -155,6 +171,9 @@
   .nav {
     @include flex(row, space-between);
     padding: 1em 1.5em;
+  }
+  .nav-other {
+    box-shadow: none;
   }
   .nav-logo {
     height: 3.2em;

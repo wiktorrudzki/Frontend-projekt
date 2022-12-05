@@ -1,0 +1,19 @@
+.contact-page-social {
+  @include flex(row, flex-start);
+  gap: 3em;
+
+  .contact-page-social--icon {
+    font-size: 2.2em;
+    color: $color-primary;
+  }
+
+  .contact-page-social--icon__facebook {
+    @include fa-icon-brands($fa-var-facebook);
+  }
+  .contact-page-social--icon__whatsapp {
+    @include fa-icon-brands($fa-var-whatsapp);
+  }
+  .contact-page-social--icon__instagram {
+    @include fa-icon-brands($fa-var-instagram);
+  }
+}

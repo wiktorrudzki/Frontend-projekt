@@ -1,12 +1,12 @@
 type Props = {
-  icon: string;
+  iconClassName: string;
   content: string;
 };
 
-const VisitInfo = ({ icon, content }: Props) => {
+const VisitInfo = ({ iconClassName, content }: Props) => {
   return (
     <div className="doctor-feature">
-      <img src={icon} />
+      <i className={`doctor-feature--icon ${iconClassName}`}></i>
       <p>{content}</p>
     </div>
   );

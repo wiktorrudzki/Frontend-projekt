@@ -2,6 +2,7 @@ import { useRef, useEffect } from "react";
 import NavItem from "../navItems";
 import { navItems, NavItemType } from "../navItems/navItems";
 import userIcon from "@/img/icons/user-solid.svg";
+import Button from "@/components/button";
 
 type Props = {
   path: string;
@@ -33,7 +34,7 @@ const NavUl = ({ path, type }: Props) => {
       // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [window.innerWidth]);
 
   const checkHomePage = () =>
     path === "/"
@@ -73,7 +74,7 @@ const NavUl = ({ path, type }: Props) => {
             </div>
             {checkHomePage()}
           </div>
-          <button className="nav-btn">Wyloguj</button>
+          <Button content="wyloguj się" btnType="btn-tertiary" />
         </ul>
       ) : (
         <ul className="nav-ul">
