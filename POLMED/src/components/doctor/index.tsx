@@ -3,7 +3,7 @@ import VisitInfo from "./components/VisitInfo";
 type Props = {
   photo: string;
   name: string;
-  type: "pediatra" | "lekarz rodzinny";
+  type: "Pediatra" | "Lekarz rodzinny";
   price?: number;
   reason?: string;
   date?: string;
@@ -13,8 +13,7 @@ type Props = {
 const Doctor = ({ photo, name, type, price, reason, date, isBooked }: Props) => {
   return (
     <div className="doctor">
-      {/* TODO problem with quality of image when using img tag and styling it with object-fit: cover */}
-      <div className="doctor-img"></div>
+      <div style={{ backgroundImage: `url(${photo}` }} className="doctor-img"></div>
       <div className="doctor-info-wrapper">
         <div className="doctor-name">
           <i className="doctor-name--doctor-icon"></i>

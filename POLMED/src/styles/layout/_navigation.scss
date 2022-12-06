@@ -1,102 +1,45 @@
-.nav-item {
-  width: fit-content;
-  list-style: none;
-  padding: 0.5em 1.25em;
-  border-radius: 1em;
-  background-color: transparent;
-  transition: all 0.2s ease-out;
-  cursor: pointer;
-  &:hover,
-  &:visited:hover {
-    background-color: $color-primary-light;
-  }
-  &:active {
-    transform: scale(0.93);
-  }
-}
-
-.nav-item-active {
-  background-color: $color-primary-light;
-  &:hover {
-    background-color: $color-primary-light;
-  }
-}
-
-.nav-item-link {
-  color: $default-font-color;
-  text-decoration: none;
-  &:visited {
-    text-decoration: none;
-  }
-  &:visited:hover {
-    color: $color-primary;
-  }
-}
-
-.nav-item-link-active {
-  color: $color-primary;
-  &:visited {
-    color: $color-primary;
-  }
-}
-
-.nav-item-hp {
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-  }
-}
-
-.nav-item-hp-active {
-  background-color: rgba(255, 255, 255, 0.4);
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-  }
-}
-
-.nav-item-link-hp {
-  color: $white;
-  &:visited,
-  &:hover,
-  &:visited:hover {
-    color: $white;
-  }
-}
-
-.nav-item-link-hp-active {
-  color: $white;
-  &:visited,
-  &:hover,
-  &:visited:hover {
-    color: $white;
-  }
-}
-
 .nav {
   @include flex;
   gap: 5em;
   padding: 0.6em 0;
-  box-shadow: 0 2px 6px rgb(0, 0, 0, 0.15);
   width: 100%;
 }
 
 .nav-hp {
-  @include flex;
-  gap: 5em;
-  padding: 0.6em 0;
   background-color: transparent;
   position: absolute;
   z-index: 1;
-  width: 100%;
+}
+
+.nav-other {
+  box-shadow: 0 2px 6px rgb(0, 0, 0, 0.15);
 }
 
 .nav-logo {
   height: 3.75em;
 }
 
+.nav-bars-icon {
+  @include fa-icon-solid($fa-var-bars);
+  color: $default-font-color;
+  transform: scale(2);
+  cursor: pointer;
+}
+
+.nav-bars-icon-white {
+  color: $white;
+}
+
 .nav-ul {
   @include flex;
   gap: 0.5em;
   list-style: none;
+}
+
+.na-ul-wrapper-user-icon {
+  @include fa-icon-solid($fa-var-user);
+  color: $color-primary;
+  transform: scale(2.2);
 }
 
 .nav-btn {
@@ -115,10 +58,191 @@
   }
 }
 
+.nav-item {
+  transition: 0.1s ease-in-out;
+  &:active {
+    transform: scale(0.93);
+  }
+}
+
 .nav-btn-hp {
   color: $color-secondary;
   background-color: $white;
   &:hover {
     background-color: darken(#ffffff, 10%);
+  }
+}
+
+.nav-item-link {
+  width: fit-content;
+  list-style: none;
+  padding: 0.5em 1.25em;
+  border-radius: 1em;
+  background-color: transparent;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  text-decoration: none;
+  color: $default-font-color;
+  &:visited {
+    text-decoration: none;
+  }
+  &:hover,
+  &:visited:hover {
+    background-color: $color-primary-extra-light;
+    color: $color-primary;
+  }
+  .nav-item-doctor-icon {
+    @include fa-icon-solid($fa-var-user-doctor);
+  }
+  .nav-item-home-icon {
+    @include fa-icon-solid($fa-var-home);
+  }
+  .nav-item-money-icon {
+    @include fa-icon-solid($fa-var-money-bills);
+  }
+  .nav-item-phone-icon {
+    @include fa-icon-solid($fa-var-phone);
+  }
+  .nav-item-user-icon {
+    @include fa-icon-solid($fa-var-user);
+  }
+  .nav-item-icon-active {
+    color: $color-primary;
+  }
+}
+
+.nav-item-link-active {
+  color: $color-primary;
+  background-color: $color-primary-light;
+  &:hover {
+    background-color: $color-primary-light;
+  }
+  &:visited {
+    color: $color-primary;
+  }
+}
+
+.nav-item-link-hp {
+  color: $white;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  &:visited,
+  &:hover,
+  &:visited:hover {
+    color: $white;
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+}
+
+.nav-item-link-hp-active {
+  color: $white;
+  background-color: rgba(255, 255, 255, 0.4);
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  &:visited,
+  &:hover,
+  &:visited:hover {
+    color: $white;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+@media (max-width: 1234px) {
+  .nav {
+    gap: 2.5em;
+    padding: 0.6em 1em;
+  }
+  .nav-logo {
+    height: 3.2em;
+  }
+  .nav-ul {
+    gap: 0.4em;
+  }
+  .nav-btn {
+    padding: 0.7em 3em;
+    font-size: 0.85em;
+  }
+  .nav-item-link {
+    padding: 0.4em 1em;
+  }
+  .nav-item-li {
+    font-size: 0.9em;
+  }
+  .nav-btn {
+    padding: 0.7em 3em;
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    @include flex(row, space-between);
+    padding: 1em 1.5em;
+  }
+  .nav-logo {
+    height: 3.2em;
+  }
+  .div-darker {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.3;
+  }
+  .nav-ul {
+    margin: 0;
+    padding: 0 6%;
+    height: 100vh;
+    position: fixed;
+    left: 100%;
+    top: 0;
+    background-color: $white;
+    @include flex(column, space-evenly);
+    transition: 0.5s ease-in-out;
+    transform: translateX(0);
+  }
+  .nav-ul-wrapper {
+    @include flex(column, center, stretch);
+    gap: 1em;
+    div {
+      @include flex(column);
+      gap: 0.8em;
+      img {
+        height: 2.5em;
+      }
+      h2 {
+        font-size: 1.4em;
+        color: $default-font-color;
+        span {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+  .nav-btn {
+    padding: 0.7em 3em;
+    font-size: 0.85em;
+  }
+  .nav-item-link {
+    padding: 0.5em 1em;
+    @include flex;
+    width: max-content;
+    gap: 0.7em;
+  }
+  .nav-item-icon {
+    width: 1em;
+  }
+  .nav-item-li {
+    font-size: 1em;
+  }
+  //TODO button styles made by Adrian here
+  .nav-btn {
+    padding: 0.7em 3em;
+    font-size: 0.8em;
   }
 }

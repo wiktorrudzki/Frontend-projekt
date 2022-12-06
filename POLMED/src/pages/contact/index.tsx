@@ -26,9 +26,9 @@ const Contact = () => {
             </ContactInfo>
           </div>
           <div className="contact-page-social">
-            <ContactSocial href="#" iconClassName="contact-page-social--icon__facebook" />
-            <ContactSocial href="#" iconClassName="contact-page-social--icon__instagram" />
-            <ContactSocial href="#" iconClassName="contact-page-social--icon__whatsapp" />
+            <ContactSocial iconClassName="contact-page-social--icon__facebook" />
+            <ContactSocial iconClassName="contact-page-social--icon__instagram" />
+            <ContactSocial iconClassName="contact-page-social--icon__whatsapp" />
           </div>
         </section>
         <iframe
