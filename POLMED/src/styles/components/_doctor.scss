@@ -1,11 +1,10 @@
 .doctor {
   @include flex(column);
-  padding: 1.5em 0;
+  padding: 0;
   gap: 1.35em;
 }
 
 .doctor-img {
-  background-image: url("../../img/doctors/doctor1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   object-fit: cover;
@@ -15,6 +14,7 @@
 }
 
 .doctor-info-wrapper {
+  width: 100%;
   @include flex(column, flex-start, stretch);
   gap: 0.7em;
 }

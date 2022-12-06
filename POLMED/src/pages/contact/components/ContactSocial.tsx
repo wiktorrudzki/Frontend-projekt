@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom";
+
 type Props = {
-  href: string;
   iconClassName: string;
 };
 
-const ContactSocials = function ({ href, iconClassName }: Props) {
+const ContactSocials = function ({ iconClassName }: Props) {
   return (
-    <a href={href}>
+    <Link to="">
       <i className={`contact-page-social--icon ${iconClassName}`}></i>
-    </a>
+    </Link>
   );
 };
 
