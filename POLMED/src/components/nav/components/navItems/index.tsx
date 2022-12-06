@@ -11,8 +11,6 @@ type Props = {
 };
 
 const NavItem = ({ content, url, active, homePage, type, icon, ulRef }: Props) => {
-  console.log(icon);
-
   return (
     <>
       {type === "mobile" ? (
@@ -20,16 +18,14 @@ const NavItem = ({ content, url, active, homePage, type, icon, ulRef }: Props) =
           onClick={() => {
             if (ulRef.current) {
               ulRef.current.style.transform = "translateX(0%)";
+              const divDarker = document.querySelector(".div-darker");
+              (divDarker as HTMLElement).style.setProperty("display", "none");
             }
           }}
           to={url}
           className={`nav-item-link ${active ? "nav-item-link-active" : ""}`}>
-          {/* TODO CHANGE ICONS COLOR DEPENDING ON CURRENT ROUTE (AT FIRST WE HAVE TO SOLVE THE TASK WITH SVG ICONS FILL) */}
-          {/* <img className="nav-item-icon" src={icon} alt="icon" /> */}
           <i className={`${icon} ${active ? "nav-item-icon-active" : ""}`}></i>
-          <li className={`nav-item-li ${active ? "nav-item-li-active" : ""}`}>
-            {content}
-          </li>
+          <li className={`nav-item-li ${active ? "nav-item-li-active" : ""}`}>{content}</li>
         </Link>
       ) : homePage ? (
         <li className={`nav-item nav-item-hp ${active ? "nav-item-hp-active" : ""}`}>
