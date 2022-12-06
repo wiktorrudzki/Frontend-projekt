@@ -14,7 +14,7 @@ const Nav = () => {
     const handleWindowResize = () => {
       setWindowSize([window.innerWidth, window.innerHeight]);
       if (window.innerWidth > 1024) {
-        const navUl = document.querySelector(".nav-container");
+        const navUl = document.querySelector(".nav-ul");
         (navUl as HTMLElement).style.setProperty("transform", "translateX(0)");
       }
     };
