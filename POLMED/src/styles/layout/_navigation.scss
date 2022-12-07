@@ -180,6 +180,7 @@
   .nav {
     @include flex(row, space-between);
     padding: 1em 1.5em;
+    z-index: 99;
   }
   .nav-logo {
     height: 3.2em;
