@@ -8,6 +8,7 @@
 
 .react-calendar__navigation {
   margin: 0;
+  @include flex;
 }
 
 .react-calendar__navigation .react-calendar__navigation__arrow {
@@ -86,16 +87,26 @@ abbr[title] {
 .react-calendar__tile--active,
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-  background-color: #66cc9950;
-  color: #66cc99;
-}
-
-.react-calendar__tile--active:hover {
-  background-color: #66cc9950;
-  color: #66cc99;
+  background-color: #66cc9950 !important;
+  color: #66cc99 !important;
 }
 
 .react-calendar__month-view__days__day--neighboringMonth {
   color: #99999950;
   background-color: #99999910;
+}
+
+.triangle {
+  cursor: pointer;
+  @include fa-icon-solid($fa-var-caret-down);
+  color: $color-primary;
+  font-size: 0.65em;
+}
+
+.triangle-right {
+  transform: rotate(-90deg);
+}
+
+.triangle-left {
+  transform: rotate(90deg);
 }

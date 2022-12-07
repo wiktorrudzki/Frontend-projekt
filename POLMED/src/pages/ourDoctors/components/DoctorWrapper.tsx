@@ -1,6 +1,6 @@
 import Button from "@/components/button";
 import Doctor from "@/components/doctor";
-import { DoctorType } from "@/types/doctor";
+import { DoctorType } from "@/types/DoctorType";
 
 type Props = {
   doctor: DoctorType;

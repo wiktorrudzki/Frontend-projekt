@@ -1,6 +1,5 @@
 import DoctorWrapper from "./components/DoctorWrapper";
 import { doctors } from "@/data/doctors";
-import Calendar from "./components/Calendar";
 
 const OurDoctors = () => {
   const paediatricians = doctors.filter((doctor) => doctor.type === "Pediatra");
@@ -20,7 +19,6 @@ const OurDoctors = () => {
           return <DoctorWrapper key={doctor.name} doctor={doctor} />;
         })}
       </div>
-      <Calendar />
     </section>
   );
 };

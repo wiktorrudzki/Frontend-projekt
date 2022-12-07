@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "@/pages/home";
 import OurDoctors from "@/pages/ourDoctors";
 import Pricing from "@/pages/pricing";
@@ -8,19 +8,16 @@ import MyAccount from "@/pages/myAccount";
 import Nav from "@/components/nav";
 import HomePageFooter from "./components/footers/home-page";
 import OtherPageFooter from "./components/footers/other";
+import { VisitProvider } from "./hooks/useVisit/VisitProvider";
+import { usePath } from "./hooks/usePath/usePath";
 import "@/styles/main.scss";
 
-//nie wiem jaki typ do createContext :|
-//eslint-disable-next-line
-export const CurrentPathContext = React.createContext<any>(undefined);
-
 const App = () => {
-  const location = useLocation();
-  const currentPath = location.pathname;
+  const currentPath = usePath();
 
   return (
     <div className="app">
-      <CurrentPathContext.Provider value={currentPath}>
+      <VisitProvider>
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -30,7 +27,7 @@ const App = () => {
           <Route path="/myAccount" element={<MyAccount />} />
         </Routes>
         {currentPath === "/" ? <HomePageFooter /> : <OtherPageFooter />}
-      </CurrentPathContext.Provider>
+      </VisitProvider>
     </div>
   );
 };

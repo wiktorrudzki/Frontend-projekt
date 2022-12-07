@@ -3,4 +3,5 @@ export type DoctorType = {
   name: string;
   date: string;
   type: "Pediatra" | "Lekarz rodzinny";
+  dates: number[];
 };
