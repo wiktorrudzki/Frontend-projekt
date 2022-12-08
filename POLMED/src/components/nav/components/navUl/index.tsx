@@ -2,15 +2,16 @@ import { useRef, useEffect } from "react";
 import NavItem from "../navItems";
 import { navItems, NavItemType } from "../navItems/navItems";
 import Button from "@/components/button";
+import { usePath } from "@/hooks/usePath/usePath";
 
 type Props = {
-  currentPath: string;
   type: "desktop" | "mobile";
   showMenu?: boolean;
   setShowMenu?: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const NavUl = ({ currentPath, type }: Props) => {
+const NavUl = ({ type }: Props) => {
+  const currentPath = usePath();
   const ulRef = useRef<null | HTMLUListElement>(null);
 
   useEffect(() => {
