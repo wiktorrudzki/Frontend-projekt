@@ -1,5 +1,5 @@
 import Button from "@/components/button";
-import Doctor from "@/components/doctor";
+import Doctor from "@/pages/ourDoctors/components/Doctor";
 import { DoctorType } from "@/types/doctor";
 
 type Props = {

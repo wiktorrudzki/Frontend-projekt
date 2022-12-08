@@ -5,8 +5,8 @@ type Props = {
 
 const VisitInfo = ({ iconClassName, content }: Props) => {
   return (
-    <div className="doctor-feature">
-      <i className={`doctor-feature--icon ${iconClassName}`}></i>
+    <div className="visit-feature">
+      <i className={`visit-feature--icon ${iconClassName}`}></i>
       <p>{content}</p>
     </div>
   );
