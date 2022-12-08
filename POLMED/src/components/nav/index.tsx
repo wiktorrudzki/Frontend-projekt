@@ -1,12 +1,12 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/img/logo/logo.png";
 import whiteLogo from "@/img/logo/logo_white.png";
 import NavUl from "./components/navUl";
-import { CurrentPathContext } from "@/App";
+import { usePath } from "@/hooks/usePath/usePath";
 
 const Nav = () => {
-  const currentPath = useContext(CurrentPathContext);
+  const currentPath = usePath();
 
   const [windowSize, setWindowSize] = useState([window.innerWidth, window.innerHeight]);
 
@@ -46,9 +46,9 @@ const Nav = () => {
         />
       )}
       {windowSize[0] <= 1024 ? (
-        <NavUl currentPath={currentPath} type="mobile" />
+        <NavUl type="mobile" />
       ) : (
-        <NavUl currentPath={currentPath} type="desktop" />
+        <NavUl type="desktop" />
       )}
     </nav>
   );
