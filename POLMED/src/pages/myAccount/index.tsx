@@ -1,19 +1,17 @@
-import { doctors } from "@/data/doctors";
+import { useVisit } from "@/hooks/useVisit/useVisit";
 import VisitWrapper from "./components/VisitWrapper";
 
 const MyAccount = () => {
-  const generals = doctors.filter((doctor) => doctor.type === "Lekarz rodzinny");
+  const { allVisits } = useVisit();
 
   return (
     <div className="visit-page">
-      {generals.map((doctor) => {
+      {allVisits.map((visit) => {
         return (
           <VisitWrapper
-            key={doctor.name}
-            photo={doctor.photo}
-            date={doctor.date}
-            type={doctor.type}
-            name={doctor.name}
+            key={visit.doctor?.name}
+            doctor={visit.doctor}
+            date={new Date(visit.date).toLocaleString()}
             price={50}
             reason="wizyta kontrolna"
           />

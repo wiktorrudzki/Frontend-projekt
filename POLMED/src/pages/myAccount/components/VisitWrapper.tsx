@@ -1,19 +1,25 @@
 import Button from "@/components/button";
+import { DoctorType } from "@/types/DoctorType";
 import Visit from "./Visit";
 
 type Props = {
-  photo: string;
-  name: string;
-  type: "Pediatra" | "Lekarz rodzinny";
+  doctor: DoctorType;
   price: number;
   reason: string;
   date: string;
 };
 
-const VisitWrapper = ({ photo, name, type, price, reason, date }: Props) => {
+const VisitWrapper = ({ doctor, price, reason, date }: Props) => {
   return (
     <div className="visit-wrapper">
-      <Visit photo={photo} name={name} price={price} reason={reason} date={date} type={type} />
+      <Visit
+        photo={doctor.photo}
+        name={doctor.name}
+        price={price}
+        reason={reason}
+        date={date}
+        type={doctor.type}
+      />
       <Button content="anuluj" btnType="btn-warning" />
     </div>
   );
