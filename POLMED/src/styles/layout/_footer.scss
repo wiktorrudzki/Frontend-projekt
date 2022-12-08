@@ -2,7 +2,7 @@
   @include flex(column);
   gap: 0.7em;
   background: $color-gradient;
-  padding: 1.5em 0;
+  padding: 1.5em;
   width: 100%;
 }
 
@@ -48,4 +48,16 @@
   font-size: 0.875em;
   line-height: 1em;
   color: $white;
+}
+
+@media (max-width: 768px) {
+  .hp-footer-upper {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .hp-footer-ul {
+    flex-direction: column;
+    gap: 0.5em;
+  }
 }
