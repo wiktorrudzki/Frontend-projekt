@@ -61,3 +61,15 @@
   font-size: 0.9em;
   width: 12.5em;
 }
+
+@media (max-width: 768px) {
+  .pricing-title {
+    font-weight: 300;
+  }
+  .pricing-warning {
+    flex-direction: column;
+  }
+  .pricing-warning-text {
+    text-align: center;
+  }
+}
