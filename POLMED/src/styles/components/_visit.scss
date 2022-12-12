@@ -70,3 +70,60 @@
     color: $color-primary;
   }
 }
+
+@media (max-width: 1024px) {
+  .doctor-img {
+    width: 8em;
+    height: 8em;
+  }
+  .visit-feature,
+  .visit-name {
+    img {
+      width: 0.85em;
+    }
+  }
+  .visit-feature {
+    p {
+      font-size: 0.85em;
+    }
+    .visit-feature--icon {
+      font-size: 0.85em;
+    }
+  }
+  .visit-name {
+    h5 {
+      font-size: 0.95em;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .doctor-img {
+    display: none;
+  }
+  .visit-feature,
+  .visit-name {
+    img {
+      width: 0.75em;
+    }
+  }
+  .visit-info-wrapper {
+    gap: 0.475em;
+  }
+  .visit-feature {
+    align-items: flex-start;
+    p {
+      font-size: 0.75em;
+    }
+    .visit-feature--icon {
+      padding-top: 0.2em;
+      font-size: 0.7em;
+    }
+  }
+  .visit-name {
+    h5 {
+      font-weight: 400;
+      font-size: 0.85em;
+    }
+  }
+}

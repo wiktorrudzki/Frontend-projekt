@@ -6,6 +6,7 @@ const MyAccount = () => {
 
   return (
     <div className="visit-page">
+      <h2>Moje wizyty:</h2>
       {allVisits.map((visit) => {
         return (
           <VisitWrapper
