@@ -5,12 +5,12 @@ import CalendarComponent from "react-calendar";
 import { changeStyles } from "./changeCalendarStylesFunction";
 
 const Calendar = () => {
-  const [visit, dispatchVisit] = useVisit();
+  const {visit, dispatchVisit} = useVisit();
 
   //eslint-disable-next-line
   const checkIfDisable = (e: any) => {
     return (
-      visit.doctor.dates.includes(e.date.getTime()) ||
+      visit.doctor?.dates.includes(e.date.getTime()) ||
       e.date.getDay() === 0 ||
       e.date.getDay() === 6 ||
       e.date.getMonth() !== e.activeStartDate.getMonth()

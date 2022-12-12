@@ -1,9 +1,3 @@
-.doctor {
-  @include flex(column);
-  padding: 0;
-  gap: 1.35em;
-}
-
 .doctor-img {
   background-size: cover;
   background-repeat: no-repeat;
@@ -13,14 +7,14 @@
   border-radius: 50%;
 }
 
-.doctor-info-wrapper {
-  width: 100%;
+.visit-info-wrapper {
+  width: fit-content;
   @include flex(column, flex-start, stretch);
   gap: 0.7em;
 }
 
-.doctor-feature,
-.doctor-name {
+.visit-feature,
+.visit-name {
   width: 100%;
   img {
     width: 0.9em;
@@ -29,7 +23,7 @@
   gap: 0.5em;
 }
 
-.doctor-feature {
+.visit-feature {
   width: 100%;
   justify-content: flex-start;
   p {
@@ -39,39 +33,39 @@
     letter-spacing: -0.04em;
   }
 
-  .doctor-feature--icon {
+  .visit-feature--icon {
     font-size: 0.9em;
   }
 
-  .doctor-feature--icon__calendar {
+  .visit-feature--icon__calendar {
     @include fa-icon-solid($fa-var-calendar);
   }
 
-  .doctor-feature--icon__stethoscope {
+  .visit-feature--icon__stethoscope {
     @include fa-icon-solid($fa-var-stethoscope);
   }
 
-  .doctor-feature--icon__briefcase {
+  .visit-feature--icon__briefcase {
     @include fa-icon-solid($fa-var-briefcase);
   }
 
-  .doctor-feature--icon__money {
+  .visit-feature--icon__money {
     @include fa-icon-solid($fa-var-money-bills);
   }
 }
 
-.doctor-name {
+.visit-name {
   h5 {
     text-align: left;
     margin: 0;
     font-size: 1em;
   }
 
-  .doctor-name--doctor-icon {
+  .visit-name--visit-icon {
     @include fa-icon-solid($fa-var-user-doctor);
   }
 
-  .doctor-name--doctor-icon,
+  .visit-name--visit-icon,
   h5 {
     color: $color-primary;
   }

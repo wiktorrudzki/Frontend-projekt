@@ -1,8 +1,23 @@
+import { useVisit } from "@/hooks/useVisit/useVisit";
+import VisitWrapper from "./components/VisitWrapper";
+
 const MyAccount = () => {
+  const { allVisits } = useVisit();
+
   return (
-    <>
-      <div>myAccount</div>
-    </>
+    <div className="visit-page">
+      {allVisits.map((visit) => {
+        return (
+          <VisitWrapper
+            key={visit.doctor?.name}
+            doctor={visit.doctor}
+            date={new Date(visit.date).toLocaleString()}
+            price={50}
+            reason="wizyta kontrolna"
+          />
+        );
+      })}
+    </div>
   );
 };
 

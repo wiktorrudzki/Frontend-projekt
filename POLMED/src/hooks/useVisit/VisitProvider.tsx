@@ -1,4 +1,6 @@
-import React, { useReducer } from "react";
+import { visits } from "@/data/visits";
+import { VisitType } from "@/types/VisitTypes";
+import React, { useReducer, useState } from "react";
 import { updateVisit } from "./reducer";
 import { VisitContextType } from "./types";
 
@@ -10,15 +12,17 @@ export const VisitContext = React.createContext<undefined | VisitContextType>(un
 
 export const VisitProvider = ({ children }: Props) => {
   const [visit, dispatchVisit] = useReducer(updateVisit, {
-    doctor: {
-      photo: "",
-      name: "",
-      date: "",
-      type: "Pediatra",
-      dates: []
-    },
-    date: null
+    doctor: null,
+    date: null,
+    reason: "",
+    price: 0
   });
 
-  return <VisitContext.Provider value={[ visit, dispatchVisit ]}>{children}</VisitContext.Provider>;
+  const [allVisits, setAllVisits] = useState<VisitType[]>(visits);
+
+  return (
+    <VisitContext.Provider value={{visit, dispatchVisit, allVisits, setAllVisits}}>
+      {children}
+    </VisitContext.Provider>
+  );
 };
