@@ -12,7 +12,7 @@ type Props = {
 function Visit({ name, photo, type, price, reason, date }: Props) {
   return (
     <div className="visit">
-      <div style={{ backgroundImage: `url(${photo}` }} className="doctor-img"></div>
+      <div style={{ backgroundImage: `url(${photo}` }} className="doctor-img doctor-img-hide"></div>
       <VisitInfoWrapper
         name={name}
         type={type}
