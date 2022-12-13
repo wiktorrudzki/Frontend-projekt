@@ -1,4 +1,3 @@
-import Button from "@/components/button";
 import Doctor from "@/pages/ourDoctors/components/Doctor";
 import { DoctorType } from "@/types/DoctorType";
 
