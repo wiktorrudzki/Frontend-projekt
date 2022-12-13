@@ -1,0 +1,18 @@
+.doctors-page {
+  padding: 2em 0;
+  @include flex(row, center, stretch);
+  gap: 10em;
+}
+
+.doctors-title {
+  font-size: 1.3em;
+  font-weight: 400;
+  color: $color-primary;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.doctors-doctors {
+  @include flex(column, flex-start);
+  gap: 2em;
+}

@@ -6,9 +6,9 @@ type Props = {
   doctor: DoctorType;
 };
 
-function DoctorWrapper({ doctor }: Props) {
+const DoctorWrapper = ({ doctor }: Props) => {
   return (
-    <div className="ourDoctors-doctor-wrapper" key={doctor.name}>
+    <div className="doctor-wrapper" key={doctor.name}>
       <Doctor
         key={doctor.name}
         photo={doctor.photo}
@@ -19,6 +19,6 @@ function DoctorWrapper({ doctor }: Props) {
       <Button btnType="btn-secondary" content="Umów się" />
     </div>
   );
-}
+};
 
 export default DoctorWrapper;
