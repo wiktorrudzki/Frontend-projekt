@@ -1,4 +1,3 @@
-import Button from "@/components/button";
 import { useVisit } from "@/hooks/useVisit/useVisit";
 import VisitWrapper from "./components/VisitWrapper";
 
@@ -18,10 +17,6 @@ const MyAccount = () => {
           />
         );
       })}
-      <Button content="dsdsds" btnType="btn-primary" />
-      <Button content="dsdsds" btnType="btn-secondary" />
-      <Button content="dsdsds" btnType="btn-tertiary" />
-      <Button content="dsdsds" btnType="btn-warning" />
     </div>
   );
 };
