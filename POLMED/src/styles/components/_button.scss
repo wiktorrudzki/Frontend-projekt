@@ -7,7 +7,7 @@
 }
 
 .btn-primary {
-  padding: 0.75em 2.75em 0.75em 2.75em;
+  padding: 0.75em 0;
   min-width: 12.5em;
   background-color: $color-secondary-light;
   color: $color-secondary;
@@ -15,7 +15,7 @@
 }
 .btn-secondary {
   border-radius: 1.5em;
-  padding: 0.65em 2em 0.65em 2em;
+  padding: 0.65em 0;
   min-width: 16.125em;
   background-color: $color-secondary-light;
   color: $color-secondary;
@@ -23,7 +23,7 @@
 }
 .btn-tertiary {
   border-radius: 1.5em;
-  padding: 0.75em 2.75em 0.75em 2.75em;
+  padding: 0.75em 0;
   min-width: 12.5em;
   background-color: $color-primary-light;
   color: $color-primary;
@@ -32,11 +32,51 @@
 
 .btn-warning {
   border-radius: 1.5em;
-  padding: 0.7em 2em 0.7em 2em;
+  padding: 0.7em 0;
   min-width: 8.5em;
   background-color: $white;
   color: $color-warning;
   border-color: $color-warning;
   border-style: solid;
   border-width: 0.2em;
+}
+
+@media (max-width: 1024px) {
+  .btn {
+    border-radius: 1.25em;
+    font-size: 0.75em;
+  }
+  .btn-primary {
+    min-width: 10em;
+  }
+  .btn-secondary {
+    min-width: 12.5em;
+  }
+  .btn-tertiary {
+    min-width: 10em;
+  }
+  .btn-warning {
+    min-width: 7.5em;
+    border-width: 0.18em;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    border-radius: 1.2em;
+    font-size: 0.7em;
+  }
+  .btn-primary {
+    min-width: 8em;
+  }
+  .btn-secondary {
+    min-width: 10em;
+  }
+  .btn-tertiary {
+    min-width: 8em;
+  }
+  .btn-warning {
+    min-width: 6.5em;
+    border-width: 0.18em;
+  }
 }
