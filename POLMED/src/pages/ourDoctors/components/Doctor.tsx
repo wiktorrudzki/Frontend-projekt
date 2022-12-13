@@ -1,4 +1,4 @@
-import VisitInfoWrapper from "../../../components/visit/VisitInfoWrapper";
+import VisitInfoWrapper from "@/components/visit/VisitInfoWrapper";
 
 type Props = {
   photo: string;

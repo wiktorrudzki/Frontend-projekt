@@ -1,25 +1,23 @@
-import DoctorWrapper from "./components/DoctorWrapper";
-import { doctors } from "@/data/doctors";
+import { useRef } from "react";
+import DateChoose from "./slides/DateChoose";
+import Doctors from "./slides/Doctors";
+import TimeChoose from "./slides/TimeChoose";
+import VisitForm from "./slides/VisitForm";
+import VisitSummary from "./slides/VisitSummary";
 
 const OurDoctors = () => {
-  const paediatricians = doctors.filter((doctor) => doctor.type === "Pediatra");
-  const generals = doctors.filter((doctor) => doctor.type === "Lekarz rodzinny");
+  const sliderRef = useRef<HTMLDivElement | undefined>(undefined);
 
   return (
-    <section className="ourDoctors-page">
-      <div className="ourDoctors-doctors">
-        <h2 className="ourDoctors-title">Pediatra</h2>
-        {paediatricians.map((doctor) => {
-          return <DoctorWrapper key={doctor.name} doctor={doctor} />;
-        })}
+    <div className="our-doctors-page">
+      <div className="slider">
+        <Doctors sliderRef={sliderRef} />
+        <DateChoose sliderRef={sliderRef} />
+        <TimeChoose sliderRef={sliderRef} />
+        <VisitForm sliderRef={sliderRef} />
+        <VisitSummary sliderRef={sliderRef} />
       </div>
-      <div className="ourDoctors-doctors">
-        <h2 className="ourDoctors-title">Lekarz rodzinny</h2>
-        {generals.map((doctor) => {
-          return <DoctorWrapper key={doctor.name} doctor={doctor} />;
-        })}
-      </div>
-    </section>
+    </div>
   );
 };
 

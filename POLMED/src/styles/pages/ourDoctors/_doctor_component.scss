@@ -1,0 +1,11 @@
+.doctor-wrapper {
+  @include flex(column, center, stretch);
+  gap: 1em;
+  padding: 0.3em 0;
+}
+
+.doctor {
+  @include flex(column);
+  padding: 0;
+  gap: 1.35em;
+}
