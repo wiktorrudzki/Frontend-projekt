@@ -15,6 +15,7 @@ const Doctors = ({ sliderRef }: Props) => {
 
   const handleNextSlide = (doctor: DoctorType) => {
     dispatchVisit({ type: ActionTypes.doctor, payload: doctor });
+    console.log(sliderRef);
     if (sliderRef.current) {
       sliderRef.current.style.setProperty("transform", "translateX(-100vw)");
       setTimeout(() => {

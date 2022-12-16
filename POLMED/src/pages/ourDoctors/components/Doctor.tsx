@@ -1,4 +1,3 @@
-import Button from "@/components/button";
 import VisitInfoWrapper from "@/components/visit/VisitInfoWrapper";
 
 type Props = {
@@ -24,7 +23,6 @@ const Doctor = ({ photo, name, type, price, reason, date, isBooked }: Props) => 
           date={date}
           isBooked={isBooked}
         />
-        <Button btnType="btn-secondary" content="Umów się" />
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import Button from "@/components/button";
 import Doctor from "@/pages/ourDoctors/components/Doctor";
 import { DoctorType } from "@/types/DoctorType";
 
@@ -16,7 +17,7 @@ const DoctorWrapper = ({ doctor, onClick }: Props) => {
         type={doctor.type}
         name={doctor.name}
       />
-
+      <Button onClick={onClick} btnType="btn-secondary" content="Umów się" />
     </div>
   );
 };
