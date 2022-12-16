@@ -11,6 +11,7 @@ import OtherPageFooter from "./components/footers/other";
 import { VisitProvider } from "./hooks/useVisit/VisitProvider";
 import { usePath } from "./hooks/usePath/usePath";
 import "@/styles/main.scss";
+import LoginProvider from "./hooks/useLogin/LoginProvider";
 
 const App = () => {
   const currentPath = usePath();
@@ -18,15 +19,17 @@ const App = () => {
   return (
     <div className="app">
       <VisitProvider>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/ourDoctors" element={<OurDoctors />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/myAccount" element={<MyAccount />} />
-        </Routes>
-        {currentPath === "/" ? <HomePageFooter /> : <OtherPageFooter />}
+        <LoginProvider>
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/ourDoctors" element={<OurDoctors />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/myAccount" element={<MyAccount />} />
+          </Routes>
+          {currentPath === "/" ? <HomePageFooter /> : <OtherPageFooter />}
+        </LoginProvider>
       </VisitProvider>
     </div>
   );

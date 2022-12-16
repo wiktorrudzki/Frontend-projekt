@@ -3,6 +3,8 @@ import NavItem from "../navItems";
 import { navItems, NavItemType } from "../navItems/navItems";
 import Button from "@/components/button";
 import { usePath } from "@/hooks/usePath/usePath";
+import { useLogin } from "@/hooks/useLogin/useLogin";
+import { redirect, useNavigate } from "react-router-dom";
 
 type Props = {
   type: "desktop" | "mobile";
@@ -12,6 +14,8 @@ type Props = {
 
 const NavUl = ({ type }: Props) => {
   const currentPath = usePath();
+  const { isLoggedIn, setIsLoggedIn } = useLogin();
+  const navigate = useNavigate();
   const ulRef = useRef<null | HTMLUListElement>(null);
 
   useEffect(() => {
@@ -38,52 +42,87 @@ const NavUl = ({ type }: Props) => {
     };
   }, [window.innerWidth]);
 
+  const login = () => {
+    setIsLoggedIn(true);
+  };
+
+  const logout = () => {
+    if (currentPath === "/myAccount") {
+      navigate("/");
+    }
+    setIsLoggedIn(false);
+  };
+
   const checkHomePage = () =>
     currentPath === "/"
-      ? navItems.map((item: NavItemType) => (
-          <NavItem
-            type={type}
-            key={item.content}
-            content={item.content}
-            url={item.url}
-            homePage={true}
-            active={currentPath === item.url}
-            icon={item.icon}
-            ulRef={ulRef}
-          />
-        ))
-      : navItems.map((item: NavItemType) => (
-          <NavItem
-            type={type}
-            key={item.content}
-            content={item.content}
-            url={item.url}
-            homePage={false}
-            active={currentPath === item.url}
-            icon={item.icon}
-            ulRef={ulRef}
-          />
-        ));
+      ? navItems.map((item: NavItemType) => {
+          if (!isLoggedIn && item.content === "Moje konto") {
+            return;
+          }
+          return (
+            <NavItem
+              type={type}
+              key={item.content}
+              content={item.content}
+              url={item.url}
+              homePage={true}
+              active={currentPath === item.url}
+              icon={item.icon}
+              ulRef={ulRef}
+            />
+          );
+        })
+      : navItems.map((item: NavItemType) => {
+          if (!isLoggedIn && item.content === "Moje konto") {
+            return;
+          }
+          return (
+            <NavItem
+              type={type}
+              key={item.content}
+              content={item.content}
+              url={item.url}
+              homePage={false}
+              active={currentPath === item.url}
+              icon={item.icon}
+              ulRef={ulRef}
+            />
+          );
+        });
 
   return (
     <>
       {type === "mobile" ? (
         <ul ref={ulRef} className="nav-ul">
           <div className="nav-ul-wrapper">
-            <div>
-              <i className="na-ul-wrapper-user-icon" />
-              <h2>
-                Witaj, <span>Jan!</span>
-              </h2>
-            </div>
+            {isLoggedIn && (
+              <div>
+                <i className="na-ul-wrapper-user-icon" />
+                <h2>
+                  Witaj, <span>Jan!</span>
+                </h2>
+              </div>
+            )}
             {checkHomePage()}
           </div>
-          <Button content="wyloguj się" btnType="btn-tertiary" />
+          {isLoggedIn ? (
+            <Button onClick={logout} content="wyloguj się" btnType="btn-tertiary" />
+          ) : (
+            <Button content="zaloguj się" btnType="btn-tertiary" onClick={login} />
+          )}
         </ul>
       ) : (
         <ul className="nav-ul">
           {checkHomePage()}
-          <button className={`nav-btn ${currentPath === "/" && "nav-btn-hp"}`}>Wyloguj</button>
+          {isLoggedIn ? (
+            <button onClick={logout} className={`nav-btn ${currentPath === "/" && "nav-btn-hp"}`}>
+              Wyloguj
+            </button>
+          ) : (
+            <button onClick={login} className={`nav-btn ${currentPath === "/" && "nav-btn-hp"}`}>
+              Zaloguj
+            </button>
+          )}
         </ul>
       )}
     </>

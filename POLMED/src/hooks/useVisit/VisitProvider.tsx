@@ -21,7 +21,7 @@ export const VisitProvider = ({ children }: Props) => {
   const [allVisits, setAllVisits] = useState<VisitType[]>(visits);
 
   return (
-    <VisitContext.Provider value={{visit, dispatchVisit, allVisits, setAllVisits}}>
+    <VisitContext.Provider value={{ visit, dispatchVisit, allVisits, setAllVisits }}>
       {children}
     </VisitContext.Provider>
   );
