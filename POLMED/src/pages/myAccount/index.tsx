@@ -12,7 +12,7 @@ const MyAccount = () => {
           <VisitWrapper
             key={visit.doctor?.name}
             doctor={visit.doctor}
-            date={new Date(visit.date).toLocaleString()}
+            date={new Date(visit.date).toLocaleString().slice(0, -3)}
             price={50}
             reason="wizyta kontrolna"
           />

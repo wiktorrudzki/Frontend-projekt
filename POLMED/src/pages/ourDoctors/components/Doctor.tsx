@@ -1,3 +1,4 @@
+import Button from "@/components/button";
 import VisitInfoWrapper from "@/components/visit/VisitInfoWrapper";
 
 type Props = {
@@ -14,14 +15,17 @@ const Doctor = ({ photo, name, type, price, reason, date, isBooked }: Props) => 
   return (
     <div className="doctor">
       <div style={{ backgroundImage: `url(${photo}` }} className="doctor-img"></div>
-      <VisitInfoWrapper
-        name={name}
-        type={type}
-        price={price}
-        reason={reason}
-        date={date}
-        isBooked={isBooked}
-      />
+      <div className="visit-info-btn-wrapper">
+        <VisitInfoWrapper
+          name={name}
+          type={type}
+          price={price}
+          reason={reason}
+          date={date}
+          isBooked={isBooked}
+        />
+        <Button btnType="btn-secondary" content="Umów się" />
+      </div>
     </div>
   );
 };

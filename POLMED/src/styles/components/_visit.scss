@@ -98,8 +98,12 @@
 }
 
 @media (max-width: 650px) {
-  .doctor-img {
+  .doctor-img-hide {
     display: none;
+  }
+  .doctor-img {
+    width: 6.5em;
+    height: 6.5em;
   }
   .visit-feature,
   .visit-name {
