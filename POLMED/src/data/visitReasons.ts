@@ -3,5 +3,5 @@ export const visitReasons = [
   "Konsulacja",
   "Choroba",
   "Wypisanie recepty",
-  "Szczpienie"
+  "Szczepienie"
 ];
