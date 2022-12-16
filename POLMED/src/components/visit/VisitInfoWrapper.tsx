@@ -18,9 +18,7 @@ const VisitInfoWrapper = ({ name, date, isBooked, reason, type, price }: Props) 
       </div>
       {date && (
         <VisitInfo
-          content={`${isBooked ? "Wybrany termin: " : "Najbliższy wolny termin: "}${date.slice(
-            0, -3
-          )}`}
+          content={`${isBooked ? "Wybrany termin: " : "Najbliższy wolny termin: "}${date}`}
           iconClassName="visit-feature--icon__calendar"
         />
       )}

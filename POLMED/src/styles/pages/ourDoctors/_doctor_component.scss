@@ -9,3 +9,25 @@
   padding: 0;
   gap: 1.35em;
 }
+
+.visit-info-btn-wrapper {
+  @include flex(column);
+  gap: 1em;
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .doctor-wrapper {
+    gap: 0.475em;
+  }
+  .doctor {
+    flex-direction: row;
+    gap: 1.35em;
+  }
+  .visit-info-btn-wrapper {
+    align-items: flex-start;
+    gap: 0.475em;
+  }
+}
