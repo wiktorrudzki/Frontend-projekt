@@ -1,5 +1,7 @@
 import Button from "@/components/button";
+import { useVisit } from "@/hooks/useVisit/useVisit";
 import { DoctorType } from "@/types/DoctorType";
+import { visitEachChild } from "typescript";
 import Visit from "./Visit";
 
 type Props = {
@@ -10,6 +12,21 @@ type Props = {
 };
 
 const VisitWrapper = ({ doctor, price, reason, date }: Props) => {
+  const { setAllVisits } = useVisit();
+
+  const removeVisit = () => {
+    setAllVisits((prevVisits) => {
+      return prevVisits.filter((visit) => {
+        return (
+          new Date(visit.date).toLocaleString() !== date ||
+          visit.doctor !== doctor ||
+          visit.reason !== reason ||
+          visit.price !== price
+        );
+      });
+    });
+  };
+
   return (
     <div className="visit-wrapper">
       <Visit
@@ -20,7 +37,7 @@ const VisitWrapper = ({ doctor, price, reason, date }: Props) => {
         date={date}
         type={doctor.type}
       />
-      <Button content="anuluj" btnType="btn-warning" />
+      <Button onClick={removeVisit} content="anuluj" btnType="btn-warning" />
     </div>
   );
 };
