@@ -16,7 +16,6 @@ const DoctorWrapper = ({ doctor, onClick }: Props) => {
         type={doctor.type}
         name={doctor.name}
       />
-      <Button onClick={onClick} btnType="btn-secondary" content="Umów się" />
 
     </div>
   );
