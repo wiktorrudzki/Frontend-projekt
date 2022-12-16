@@ -7,6 +7,9 @@ import { usePath } from "@/hooks/usePath/usePath";
 
 const Nav = () => {
   const currentPath = usePath();
+  useEffect(() => {
+    (document.querySelector(".doctors-page") as HTMLElement)?.classList.remove("inactive-slide");
+  }, [currentPath]);
 
   const [windowSize, setWindowSize] = useState([window.innerWidth, window.innerHeight]);
 
@@ -45,11 +48,7 @@ const Nav = () => {
           className={`${"nav-bars-icon"} ${currentPath === "/" ? "nav-bars-icon-white" : ""}`}
         />
       )}
-      {windowSize[0] <= 1024 ? (
-        <NavUl type="mobile" />
-      ) : (
-        <NavUl type="desktop" />
-      )}
+      {windowSize[0] <= 1024 ? <NavUl type="mobile" /> : <NavUl type="desktop" />}
     </nav>
   );
 };

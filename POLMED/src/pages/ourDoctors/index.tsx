@@ -6,11 +6,11 @@ import VisitForm from "./slides/VisitForm";
 import VisitSummary from "./slides/VisitSummary";
 
 const OurDoctors = () => {
-  const sliderRef = useRef<HTMLDivElement | undefined>(undefined);
+  const sliderRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <div className="our-doctors-page">
-      <div className="slider">
+      <div ref={sliderRef} className="slider">
         <Doctors sliderRef={sliderRef} />
         <DateChoose sliderRef={sliderRef} />
         <TimeChoose sliderRef={sliderRef} />

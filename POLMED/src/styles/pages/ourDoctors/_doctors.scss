@@ -16,3 +16,34 @@
   @include flex(column, flex-start);
   gap: 2em;
 }
+
+@media (max-width: 1024px) {
+  .doctors-page {
+    gap: 8em;
+  }
+  .doctors-title {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .doctors-page {
+    padding: 1em 0;
+    gap: 5em;
+  }
+}
+
+@media (max-width: 650px) {
+  .doctors-page {
+    @include flex(column, flex-start);
+    gap: 3em;
+    padding: 0;
+  }
+  .doctors-title {
+    @include flex(row, flex-start);
+    width: 100%;
+  }
+  .doctors-doctors {
+    gap: 1em;
+  }
+}

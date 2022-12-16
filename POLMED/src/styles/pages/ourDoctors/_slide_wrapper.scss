@@ -1,0 +1,23 @@
+.slide-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8em;
+  width: fit-content;
+  margin: auto;
+}
+
+.slide-section {
+  @include flex(column, space-between);
+  gap: 1em;
+  height: 100%;
+  > div {
+    @include flex(column, flex-start);
+    height: 100%;
+  }
+  h2 {
+    margin: 0;
+    margin-bottom: 0.75em;
+    font-weight: 400;
+    text-align: center;
+  }
+}
