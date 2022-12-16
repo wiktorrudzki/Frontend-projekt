@@ -5,12 +5,12 @@ import CalendarComponent from "react-calendar";
 import { changeStyles } from "./changeCalendarStylesFunction";
 
 const Calendar = () => {
-  const {visit, dispatchVisit} = useVisit();
+  const { visit, dispatchVisit } = useVisit();
 
   //eslint-disable-next-line
   const checkIfDisable = (e: any) => {
     return (
-      visit.doctor?.dates.includes(e.date.getTime()) ||
+      visit.doctor?.datesTaken.includes(e.date.getTime()) ||
       e.date.getDay() === 0 ||
       e.date.getDay() === 6 ||
       e.date.getMonth() !== e.activeStartDate.getMonth()
@@ -44,10 +44,6 @@ const Calendar = () => {
           prevLabel={<i className="triangle triangle-left"></i>}
         />
       </div>
-      <p className="text-center">
-        <span className="bold">Selected Date:</span>
-        {visit.date && new Date(visit.date).toDateString()}
-      </p>
     </div>
   );
 };

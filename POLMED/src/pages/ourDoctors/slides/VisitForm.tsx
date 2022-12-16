@@ -1,5 +1,5 @@
 type Props = {
-  sliderRef: React.MutableRefObject<HTMLDivElement | undefined>;
+  sliderRef: React.MutableRefObject<HTMLDivElement | null>;
 };
 
 const VisitForm = ({ sliderRef }: Props) => {

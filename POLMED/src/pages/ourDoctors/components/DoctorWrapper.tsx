@@ -4,9 +4,10 @@ import { DoctorType } from "@/types/DoctorType";
 
 type Props = {
   doctor: DoctorType;
+  onClick?: () => void;
 };
 
-const DoctorWrapper = ({ doctor }: Props) => {
+const DoctorWrapper = ({ doctor, onClick }: Props) => {
   return (
     <div className="doctor-wrapper" key={doctor.name}>
       <Doctor
@@ -16,7 +17,7 @@ const DoctorWrapper = ({ doctor }: Props) => {
         type={doctor.type}
         name={doctor.name}
       />
-      <Button btnType="btn-secondary" content="Umów się" />
+      <Button onClick={onClick} btnType="btn-secondary" content="Umów się" />
     </div>
   );
 };
