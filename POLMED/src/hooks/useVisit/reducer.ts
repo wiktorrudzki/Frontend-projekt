@@ -7,6 +7,11 @@ export const updateVisit = (state: NewVisitType, action: ActionType) => {
       return { ...state, doctor: action.payload };
     case ActionTypes.date:
       return { ...state, date: action.payload };
+    case ActionTypes.reason:
+      return {
+        ...state,
+        reason: action.payload
+      };
     case ActionTypes.clear:
       return {
         doctor: null,

@@ -10,3 +10,13 @@
   grid-template-columns: repeat(5, 1fr);
   transition: 0.5s ease-in all;
 }
+
+.slide {
+  padding: 1em 0;
+}
+
+.inactive-slide {
+  width: 100vw;
+  height: 1px;
+  overflow: hidden;
+}

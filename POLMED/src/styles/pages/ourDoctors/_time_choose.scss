@@ -1,0 +1,53 @@
+.time-choose-right-content {
+  @include flex(column, space-between);
+  gap: 5em;
+  height: 100%;
+  > div {
+    @include flex(column);
+    > a,
+    > a:visited {
+      color: $color-primary;
+      font-size: 1.1em;
+    }
+    > p {
+      font-size: 0.75em;
+    }
+  }
+  h2,
+  p {
+    margin: 0;
+  }
+  label {
+    position: relative;
+  }
+  label::after {
+    content: "";
+    clip-path: polygon(90% 0, 10% 0, 50% 35%);
+    background-color: $color-secondary;
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    right: 10%;
+    top: calc(50% - 0.175em);
+  }
+  select {
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    background-color: $color-secondary-light;
+    color: $color-secondary;
+    padding: 0.5em 3em;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+  }
+  .selector-options {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  select:focus {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

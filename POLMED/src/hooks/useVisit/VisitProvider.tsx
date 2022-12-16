@@ -14,14 +14,14 @@ export const VisitProvider = ({ children }: Props) => {
   const [visit, dispatchVisit] = useReducer(updateVisit, {
     doctor: null,
     date: null,
-    reason: "",
+    reason: "Wizyta kontrolna",
     price: 0
   });
 
   const [allVisits, setAllVisits] = useState<VisitType[]>(visits);
 
   return (
-    <VisitContext.Provider value={{visit, dispatchVisit, allVisits, setAllVisits}}>
+    <VisitContext.Provider value={{ visit, dispatchVisit, allVisits, setAllVisits }}>
       {children}
     </VisitContext.Provider>
   );
