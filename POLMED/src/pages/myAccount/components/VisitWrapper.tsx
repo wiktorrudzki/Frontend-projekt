@@ -1,7 +1,6 @@
 import Button from "@/components/button";
 import { useVisit } from "@/hooks/useVisit/useVisit";
 import { DoctorType } from "@/types/DoctorType";
-import { visitEachChild } from "typescript";
 import Visit from "./Visit";
 
 type Props = {

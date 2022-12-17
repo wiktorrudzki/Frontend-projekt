@@ -8,9 +8,11 @@ type Props = {
   reason?: string;
   date?: string;
   isBooked?: boolean;
+  doctorsSlide?: boolean;
+  onClick?: () => void;
 };
 
-const Doctor = ({ photo, name, type, price, reason, date, isBooked }: Props) => {
+const Doctor = ({ photo, name, type, price, reason, date, isBooked, doctorsSlide, onClick }: Props) => {
   return (
     <div className="doctor">
       <div style={{ backgroundImage: `url(${photo}` }} className="doctor-img"></div>
@@ -22,6 +24,8 @@ const Doctor = ({ photo, name, type, price, reason, date, isBooked }: Props) => 
           reason={reason}
           date={date}
           isBooked={isBooked}
+          doctorsSlide={doctorsSlide}
+          onClick={onClick}
         />
       </div>
     </div>

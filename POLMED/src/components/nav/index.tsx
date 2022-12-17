@@ -7,6 +7,7 @@ import { usePath } from "@/hooks/usePath/usePath";
 
 const Nav = () => {
   const currentPath = usePath();
+
   useEffect(() => {
     (document.querySelector(".doctors-page") as HTMLElement)?.classList.remove("inactive-slide");
   }, [currentPath]);

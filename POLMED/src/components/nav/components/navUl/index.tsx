@@ -4,7 +4,7 @@ import { navItems, NavItemType } from "../navItems/navItems";
 import Button from "@/components/button";
 import { usePath } from "@/hooks/usePath/usePath";
 import { useLogin } from "@/hooks/useLogin/useLogin";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   type: "desktop" | "mobile";
@@ -21,7 +21,7 @@ const NavUl = ({ type }: Props) => {
   useEffect(() => {
     //nie mam pojecia jaki typ pasuje tutaj :|
     //eslint-disable-next-line
-    function handleClickOutside(e: any) {
+    const handleClickOutside = (e: any) => {
       if (
         ulRef.current &&
         !ulRef.current.contains(e.target) &&
@@ -31,7 +31,8 @@ const NavUl = ({ type }: Props) => {
         (divDarker as HTMLElement).style.setProperty("display", "none");
         ulRef.current.style.transform = "translateX(0%)";
       }
-    }
+    };
+
     if (window.innerWidth <= 1024) {
       document.addEventListener("mousedown", handleClickOutside);
     }

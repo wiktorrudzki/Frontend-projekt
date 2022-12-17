@@ -40,7 +40,6 @@ const TimeChoose = ({ sliderRef }: Props) => {
 
     e.target.blur();
   };
-  console.log(visit);
 
   return (
     <>

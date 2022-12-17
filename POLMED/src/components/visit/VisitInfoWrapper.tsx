@@ -1,3 +1,4 @@
+import Button from "../button";
 import VisitInfo from "./VisitInfo";
 
 type Props = {
@@ -7,9 +8,11 @@ type Props = {
   reason?: string;
   date?: string;
   isBooked?: boolean;
+  onClick?: () => void;
+  doctorsSlide?: boolean;
 };
 
-const VisitInfoWrapper = ({ name, date, isBooked, reason, type, price }: Props) => {
+const VisitInfoWrapper = ({ name, date, isBooked, reason, type, price, onClick, doctorsSlide }: Props) => {
   return (
     <div className="visit-info-wrapper">
       <div className="visit-name">
@@ -32,6 +35,7 @@ const VisitInfoWrapper = ({ name, date, isBooked, reason, type, price }: Props) 
       {price && (
         <VisitInfo content={`Koszt: ${price}zł`} iconClassName="visit-feature--icon__money" />
       )}
+      {doctorsSlide && <Button onClick={onClick} content="umów się" btnType="btn-secondary" />}
     </div>
   );
 };

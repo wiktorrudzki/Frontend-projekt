@@ -5,9 +5,10 @@ import { DoctorType } from "@/types/DoctorType";
 type Props = {
   doctor: DoctorType;
   onClick?: () => void;
+  doctorsSlide?: boolean;
 };
 
-const DoctorWrapper = ({ doctor, onClick }: Props) => {
+const DoctorWrapper = ({ doctor, onClick, doctorsSlide }: Props) => {
   return (
     <div className="doctor-wrapper" key={doctor.name}>
       <Doctor
@@ -16,8 +17,10 @@ const DoctorWrapper = ({ doctor, onClick }: Props) => {
         date={doctor.date}
         type={doctor.type}
         name={doctor.name}
+        doctorsSlide={doctorsSlide}
+        onClick={onClick}
       />
-      <Button onClick={onClick} btnType="btn-secondary" content="Umów się" />
+      {!doctorsSlide && <Button onClick={onClick} btnType="btn-secondary" content="Umów się" />}
     </div>
   );
 };

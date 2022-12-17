@@ -15,7 +15,6 @@ const Doctors = ({ sliderRef }: Props) => {
 
   const handleNextSlide = (doctor: DoctorType) => {
     dispatchVisit({ type: ActionTypes.doctor, payload: doctor });
-    console.log(sliderRef);
     if (sliderRef.current) {
       sliderRef.current.style.setProperty("transform", "translateX(-100vw)");
       setTimeout(() => {
@@ -34,6 +33,7 @@ const Doctors = ({ sliderRef }: Props) => {
               onClick={() => handleNextSlide(doctor)}
               key={doctor.name}
               doctor={doctor}
+              doctorsSlide={true}
             />
           );
         })}
@@ -46,6 +46,7 @@ const Doctors = ({ sliderRef }: Props) => {
               onClick={() => handleNextSlide(doctor)}
               key={doctor.name}
               doctor={doctor}
+              doctorsSlide={true}
             />
           );
         })}
