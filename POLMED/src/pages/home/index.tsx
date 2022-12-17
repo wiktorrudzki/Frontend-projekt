@@ -40,7 +40,9 @@ const Home = () => {
             Dobro naszych pacjentów jest dla nas najważniejsze, dlatego placówka POLmed współpracuje
             z Narodowym Funduszem Zdrowia w celu zmniejszenia kosztów prowadzonych usług.{" "}
           </p>
-          <img className="hp-down-building-photo-section-logo" src={NFZLogo} alt="nfz logo" />
+          <a href="https://www.nfz.gov.pl/" target="_blank" rel="noreferrer">
+            <img className="hp-down-building-photo-section-logo" src={NFZLogo} alt="nfz logo" />
+          </a>
         </BuildingPhotoComponent>
         <i className="hp-down-triangle" onClick={scrollUp}></i>
       </section>
