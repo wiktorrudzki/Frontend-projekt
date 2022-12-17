@@ -1,4 +1,5 @@
 export const visitHours = [
+  "Wybierz godzinę...",
   "7:00",
   "7:30",
   "8:00",

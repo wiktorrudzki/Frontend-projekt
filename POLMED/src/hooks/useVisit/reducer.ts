@@ -10,14 +10,15 @@ export const updateVisit = (state: NewVisitType, action: ActionType) => {
     case ActionTypes.reason:
       return {
         ...state,
-        reason: action.payload
+        reason: action.reason,
+        price: action.price
       };
     case ActionTypes.clear:
       return {
         doctor: null,
         date: null,
-        reason: "",
-        price: 0
+        reason: "Wizyta kontrolna",
+        price: 50
       };
     default:
       return state;

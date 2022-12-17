@@ -15,7 +15,7 @@ export enum ActionTypes {
 export type ActionType =
   | { type: ActionTypes.date; payload: number }
   | { type: ActionTypes.doctor; payload: DoctorType }
-  | { type: ActionTypes.reason; payload: string }
+  | { type: ActionTypes.reason; reason: string; price: number }
   | { type: ActionTypes.clear };
 
 export type VisitContextType = {

@@ -29,7 +29,7 @@ const DateChoose = ({ sliderRef }: Props) => {
               btnPrevContent="wróć"
               btnNextContent="dalej"
               prevElement={document.querySelector(".doctors-page") as HTMLElement}
-              clean={true}
+              clearWhenBack={true}
               currentDoctor={
                 <Doctor
                   name={visit.doctor.name}
