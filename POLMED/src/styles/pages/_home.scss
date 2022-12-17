@@ -53,7 +53,7 @@
 
 .hp-down {
   // variable --hp-footer-height is generated from home page react component
-  height: calc(100vh - var(--hp-footer-height));
+  height: calc(100vh - 1em - var(--hp-footer-height));
   width: 100%;
   background-color: white;
   transition: all 1s ease-out;

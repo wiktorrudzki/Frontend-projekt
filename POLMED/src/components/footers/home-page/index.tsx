@@ -5,6 +5,7 @@ import { useRef, useEffect } from "react";
 function updateHpFooterHeightVar(hpFooterRef: React.RefObject<HTMLElement>) {
   const rootElement = document.querySelector(":root");
   const footerHeight = hpFooterRef.current?.clientHeight;
+  console.log(footerHeight);
 
   if (!footerHeight || !rootElement) return;
 
@@ -16,7 +17,8 @@ const HomePageFooter = () => {
 
   useEffect(() => {
     updateHpFooterHeightVar(hpFooterRef);
-  }, [hpFooterRef]);
+    window.addEventListener("resize", () => updateHpFooterHeightVar(hpFooterRef));
+  }, []);
 
   return (
     <footer ref={hpFooterRef} className="footer">
