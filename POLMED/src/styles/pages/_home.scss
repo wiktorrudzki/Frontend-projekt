@@ -14,14 +14,14 @@
 }
 
 .hp-up-column {
-  width: min(100vw, 25em);
+  width: 25em;
 }
 
 .hp-up-doctor {
   position: absolute;
   bottom: 0;
+  max-width: 25em;
   max-height: 80vh;
-  max-width: 100vw;
 }
 
 .hp-up-title {
@@ -34,6 +34,7 @@
   font-weight: 100;
   word-spacing: 0.12em;
   letter-spacing: -0.075em;
+  margin: auto;
   span {
     @include flex(column);
   }
@@ -70,6 +71,7 @@
 }
 
 .hp-down-building-photo-section-text {
+  padding: 0 1em;
   font-size: 1.4em;
   text-align: center;
   margin: 0;
@@ -79,19 +81,26 @@
 .hp-down-building-photo-section-logo {
   height: 7em;
 }
+@media (max-width: 768px) {
+  .hp-down-building-photo-section-text {
+    font-size: 1.2em;
+    width: 100%;
+  }
+
+  .hp-down-building-photo-section-logo {
+    height: 20vw;
+  }
+}
 
 @media (max-width: 1024px) {
   .hp-up-columns {
     display: block;
+    width: 100%;
   }
 
   .hp-up-doctor {
     left: 50%;
     transform: translateX(-50%);
     opacity: 0.175;
-  }
-
-  .hp-up-title {
-    width: 100vw;
   }
 }
