@@ -5,6 +5,10 @@ export type NewVisitType = {
   date: number | null;
   price: number;
   reason: string;
+  name: string;
+  surrname: string;
+  id: string;
+  email: string;
 };
 
 export type VisitType = {

@@ -69,6 +69,7 @@
   }
   .btn-primary {
     min-width: 10em;
+    padding: 1em 1.5em;
   }
   .btn-secondary {
     min-width: 14em;
@@ -86,7 +87,7 @@
 @media (max-width: 768px) {
   .btn {
     border-radius: 1.2em;
-    font-size: 0.7em;
+    font-size: 0.8em;
   }
   .btn-primary {
     min-width: 8em;

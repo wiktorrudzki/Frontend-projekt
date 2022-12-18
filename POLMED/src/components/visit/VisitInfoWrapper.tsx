@@ -12,7 +12,16 @@ type Props = {
   doctorsSlide?: boolean;
 };
 
-const VisitInfoWrapper = ({ name, date, isBooked, reason, type, price, onClick, doctorsSlide }: Props) => {
+const VisitInfoWrapper = ({
+  name,
+  date,
+  isBooked,
+  reason,
+  type,
+  price,
+  onClick,
+  doctorsSlide
+}: Props) => {
   return (
     <div className="visit-info-wrapper">
       <div className="visit-name">
@@ -21,7 +30,9 @@ const VisitInfoWrapper = ({ name, date, isBooked, reason, type, price, onClick, 
       </div>
       {date && (
         <VisitInfo
-          content={`${isBooked ? "Wybrany termin: " : "Najbliższy wolny termin: "}${date}`}
+          content={`${
+            isBooked ? `Wybrany termin: ${date.slice(0, -3)}` : `Najbliższy wolny termin: ${date}`
+          }`}
           iconClassName="visit-feature--icon__calendar"
         />
       )}

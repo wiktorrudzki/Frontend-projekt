@@ -6,7 +6,7 @@ export const handlePrevSlide = (
   dispatchVisit: (value: ActionType) => void,
   clearWhenBack: boolean,
   prevElement: HTMLElement,
-  translateTo: string
+  translateTo: string,
 ) => {
   if (sliderRef.current) {
     sliderRef.current.style.setProperty("transform", `translateX(${translateTo}vw)`);

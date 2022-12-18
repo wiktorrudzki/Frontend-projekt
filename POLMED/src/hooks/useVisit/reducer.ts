@@ -7,6 +7,14 @@ export const updateVisit = (state: NewVisitType, action: ActionType) => {
       return { ...state, doctor: action.payload };
     case ActionTypes.date:
       return { ...state, date: action.payload };
+    case ActionTypes.name:
+      return { ...state, name: action.payload };
+    case ActionTypes.surrname:
+      return { ...state, surrname: action.payload };
+    case ActionTypes.id:
+      return { ...state, id: action.payload };
+    case ActionTypes.email:
+      return { ...state, email: action.payload };
     case ActionTypes.reason:
       return {
         ...state,
@@ -18,7 +26,11 @@ export const updateVisit = (state: NewVisitType, action: ActionType) => {
         doctor: null,
         date: null,
         reason: "Wizyta kontrolna",
-        price: 50
+        price: 50,
+        name: "",
+        surrname: "",
+        id: "",
+        email: ""
       };
     default:
       return state;

@@ -11,7 +11,7 @@ type Props = {
 };
 
 const TimeChoose = ({ sliderRef }: Props) => {
-  const { visit, dispatchVisit } = useVisit();
+  const { visit, dispatchVisit, setAllVisits } = useVisit();
 
   let currentHour: string;
   let currentMinutes: string;
@@ -24,6 +24,19 @@ const TimeChoose = ({ sliderRef }: Props) => {
   const handleNextSlide = () => {
     if (sliderRef.current && visit.date && !new Date(visit.date).toString().includes("00:00:00")) {
       sliderRef.current.style.setProperty("transform", "translate(-300vw)");
+      setAllVisits((prev) => {
+        if (visit.date && visit.doctor && visit.price && visit.reason) {
+          return [
+            ...prev,
+            {
+              doctor: visit.doctor,
+              date: visit.date,
+              reason: visit.reason,
+              price: visit.price
+            }
+          ];
+        } else return prev;
+      });
     }
   };
 

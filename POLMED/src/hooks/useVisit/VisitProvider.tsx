@@ -15,7 +15,11 @@ export const VisitProvider = ({ children }: Props) => {
     doctor: null,
     date: null,
     reason: "Wizyta kontrolna",
-    price: 50
+    price: 50,
+    name: "",
+    surrname: "",
+    id: "",
+    email: ""
   });
 
   const [allVisits, setAllVisits] = useState<VisitType[]>(visits);

@@ -23,6 +23,7 @@ const datesTillJanuary = [
   new Date(2022, 11, 23).getTime(),
   new Date(2022, 11, 24).getTime(),
   new Date(2022, 11, 25).getTime(),
+  new Date(2022, 11, 26).getTime(),
   new Date(2022, 11, 27).getTime(),
   new Date(2022, 11, 28).getTime(),
   new Date(2022, 11, 29).getTime(),
@@ -33,7 +34,7 @@ export const doctors: DoctorType[] = [
   {
     photo: AnnaKowalskaPhoto,
     name: "lek. med. Anna Kowalska",
-    date: "3 sty",
+    date: "2 sty",
     type: "Pediatra",
     datesTaken: [
       ...datesTillJanuary,
@@ -56,6 +57,7 @@ export const doctors: DoctorType[] = [
       new Date(2023, 0, 2).getTime(),
       new Date(2023, 0, 3).getTime(),
       new Date(2023, 0, 4).getTime(),
+      new Date(2023, 0, 5).getTime(),
       new Date(2023, 0, 6).getTime(),
       new Date(2023, 0, 7).getTime(),
       new Date(2023, 0, 8).getTime(),
@@ -83,7 +85,7 @@ export const doctors: DoctorType[] = [
   {
     photo: JanKuznikPhoto,
     name: "lek. Jan Kuźnik",
-    date: "10 lis",
+    date: "2 sty",
     type: "Lekarz rodzinny",
     datesTaken: [...datesTillJanuary],
     hoursTaken: ["7:30", "11:00", "13:00", "13:30", "14:00", "14:30"]

@@ -5,16 +5,16 @@ import { handlePrevSlide } from "../slides/handlers/handlePrevSlide";
 
 type Props = {
   sliderRef: React.MutableRefObject<HTMLDivElement | null>;
-  handleNextSlide: () => void;
+  handleNextSlide?: () => void;
   titleRight: string;
   titleLeft: string;
-  btnPrevContent: string;
-  btnNextContent: string;
+  btnPrevContent?: string;
+  btnNextContent?: string;
   clearWhenBack: boolean;
-  prevElement: HTMLElement;
+  prevElement?: HTMLElement;
   currentDoctor: JSX.Element;
   rightContent: JSX.Element;
-  translateTo: string;
+  translateTo?: string;
 };
 
 const SlideWrapper = ({
@@ -47,11 +47,17 @@ const SlideWrapper = ({
   const isMobile = width <= 768;
 
   const prevButton = (
-    <Button
-      onClick={() => handlePrevSlide(sliderRef, dispatchVisit, clean, prevElement, translateTo)}
-      content={btnPrevContent}
-      btnType="btn-tertiary"
-    />
+    <>
+      {prevElement && btnPrevContent && translateTo && (
+        <Button
+          onClick={() =>
+            handlePrevSlide(sliderRef, dispatchVisit, clearWhenBack, prevElement, translateTo)
+          }
+          content={btnPrevContent}
+          btnType="btn-tertiary"
+        />
+      )}
+    </>
   );
 
   return (
@@ -63,15 +69,17 @@ const SlideWrapper = ({
               <h2>{titleLeft}</h2>
               {currentDoctor}
             </div>
-            {!isMobile && prevButton}
+            {!isMobile && btnPrevContent && translateTo && prevElement && prevButton}
           </section>
           <section className="slide-section">
             <div>
               <h2>{titleRight}</h2>
               {rightContent}
             </div>
-            <Button onClick={handleNextSlide} content={btnNextContent} btnType="btn-primary" />
-            {isMobile && prevButton}
+            {handleNextSlide && btnNextContent && (
+              <Button onClick={handleNextSlide} content={btnNextContent} btnType="btn-primary" />
+            )}
+            {isMobile && btnPrevContent && translateTo && prevElement && prevButton}
           </section>
         </div>
       )}

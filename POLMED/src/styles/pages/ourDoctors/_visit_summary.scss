@@ -1,0 +1,24 @@
+.visit-summary-page {
+  @include flex(column);
+}
+
+.visit-summary-right-content {
+  @include flex(column);
+  gap: 2em;
+  width: 100%;
+  p {
+    width: 14em;
+    text-align: center;
+    a,
+    a:visited,
+    span {
+      color: $color-primary;
+      text-decoration: none;
+    }
+  }
+  i {
+    @include fa-icon-regular($fa-var-circle-check);
+    font-size: 6em;
+    color: $color-secondary;
+  }
+}

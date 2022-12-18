@@ -9,6 +9,9 @@ type Props = {
   maxInputLength?: number;
   required?: boolean;
   type?: string;
+  ref?: React.MutableRefObject<HTMLInputElement | null>;
+  //eslint-disable-next-line
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 function Input({
@@ -19,7 +22,8 @@ function Input({
   inputPattern,
   maxInputLength = 50,
   required = false,
-  type
+  type,
+  onChange
 }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const iconRef = useRef<HTMLImageElement>(null);
@@ -52,6 +56,7 @@ function Input({
   }
 
   function checkValidity(e: React.ChangeEvent<HTMLInputElement>) {
+    //eslint-disable-next-line
     regex.test(e.target.value) ? validHandler() : invalidHandler(e);
   }
 
@@ -63,7 +68,10 @@ function Input({
       </label>
       <div className="form-field--wrapper">
         <input
-          onChange={checkValidity}
+          onChange={(e) => {
+            onChange(e);
+            checkValidity(e);
+          }}
           ref={inputRef}
           className="form-field--wraper__input"
           type={type}

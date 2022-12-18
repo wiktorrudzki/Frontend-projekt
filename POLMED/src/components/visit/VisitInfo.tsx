@@ -7,7 +7,7 @@ const VisitInfo = ({ iconClassName, content }: Props) => {
   return (
     <div className="visit-feature">
       <i className={`visit-feature--icon ${iconClassName}`}></i>
-      <p>{content.slice(0, -3)}</p>
+      <p>{content}</p>
     </div>
   );
 };
