@@ -1,5 +1,6 @@
 import Button from "@/components/button";
 import { useVisit } from "@/hooks/useVisit/useVisit";
+import { useState, useEffect } from "react";
 import { handlePrevSlide } from "../slides/handlers/handlePrevSlide";
 
 type Props = {
@@ -30,6 +31,28 @@ const SlideWrapper = ({
   translateTo
 }: Props) => {
   const { visit, dispatchVisit } = useVisit();
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
+
+  const prevButton = (
+    <Button
+      onClick={() => handlePrevSlide(sliderRef, dispatchVisit, clean, prevElement, translateTo)}
+      content={btnPrevContent}
+      btnType="btn-tertiary"
+    />
+  );
 
   return (
     <>
@@ -40,11 +63,7 @@ const SlideWrapper = ({
               <h2>{titleLeft}</h2>
               {currentDoctor}
             </div>
-            <Button
-              onClick={() => handlePrevSlide(sliderRef, dispatchVisit, clearWhenBack, prevElement, translateTo)}
-              content={btnPrevContent}
-              btnType="btn-tertiary"
-            />
+            {!isMobile && prevButton}
           </section>
           <section className="slide-section">
             <div>
@@ -52,6 +71,7 @@ const SlideWrapper = ({
               {rightContent}
             </div>
             <Button onClick={handleNextSlide} content={btnNextContent} btnType="btn-primary" />
+            {isMobile && prevButton}
           </section>
         </div>
       )}
