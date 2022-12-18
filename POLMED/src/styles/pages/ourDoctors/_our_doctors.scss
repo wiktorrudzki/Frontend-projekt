@@ -13,6 +13,7 @@
 
 .slide {
   padding: 1em 0;
+  @include flex;
 }
 
 .inactive-slide {

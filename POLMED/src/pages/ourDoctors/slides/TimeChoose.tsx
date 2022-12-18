@@ -4,7 +4,7 @@ import Doctor from "../components/Doctor";
 import SlideWrapper from "../components/SlideWrapper";
 import { ActionTypes } from "@/hooks/useVisit/types";
 import { visitHours } from "@/data/visitHours";
-import { visitReasons } from "@/data/visitReasons";
+import { visitDetails } from "@/data/visitDetails";
 
 type Props = {
   sliderRef: React.MutableRefObject<HTMLDivElement | null>;
@@ -13,19 +13,45 @@ type Props = {
 const TimeChoose = ({ sliderRef }: Props) => {
   const { visit, dispatchVisit } = useVisit();
 
+  let currentHour: string;
+  let currentMinutes: string;
+
+  if (visit.date) {
+    currentHour = new Date(visit.date).getHours().toString();
+    currentMinutes = new Date(visit.date).getMinutes().toString().slice(0, 1);
+  }
+
   const handleNextSlide = () => {
     if (sliderRef.current && visit.date && !new Date(visit.date).toString().includes("00:00:00")) {
       sliderRef.current.style.setProperty("transform", "translate(-300vw)");
     }
   };
 
+  const compareHoursAndMinutes = (hour: string) => {
+    return hour === currentHour + ":" + currentMinutes + "0";
+  };
+
   const handleTimeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (e.target.value === "Wybierz godzinę...") {
+      const lastDateIndex = visitHours.findIndex(compareHoursAndMinutes);
+      e.target.selectedIndex = lastDateIndex;
+      return;
+    }
+    let newMinutes: number;
+    let newHour: number;
+
+    if (e.target.value.length === 5) {
+      newHour = parseInt(e.target.value.slice(0, 2));
+      newMinutes = parseInt(e.target.value.slice(3));
+    } else {
+      newHour = parseInt(e.target.value.slice(0, 1));
+      newMinutes = parseInt(e.target.value.slice(2));
+    }
+
     if (visit.date) {
       dispatchVisit({
         type: ActionTypes.date,
-        payload: new Date(
-          new Date(visit.date).toString().replace("00:00:00", e.target.value + ":00")
-        ).getTime()
+        payload: new Date(new Date(visit.date).setHours(newHour, newMinutes)).getTime()
       });
     }
 
@@ -35,7 +61,8 @@ const TimeChoose = ({ sliderRef }: Props) => {
   const handleReasonChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     dispatchVisit({
       type: ActionTypes.reason,
-      payload: e.target.value
+      reason: e.target.value.split(",")[0],
+      price: parseInt(e.target.value.split(",")[1])
     });
 
     e.target.blur();
@@ -52,7 +79,7 @@ const TimeChoose = ({ sliderRef }: Props) => {
             titleRight="Wybierz godzinę wizyty:"
             btnPrevContent="wróć"
             btnNextContent="umów się"
-            clean={false}
+            clearWhenBack={false}
             prevElement={document.querySelector(".date-choose-page") as HTMLElement}
             currentDoctor={
               <Doctor
@@ -71,11 +98,18 @@ const TimeChoose = ({ sliderRef }: Props) => {
                     className="time-choose-selector"
                     name="reason"
                     id="reason">
-                    {visitHours.map((hour) => (
-                      <option key={hour} disabled={visit.doctor?.hoursTaken.includes(hour)}>
-                        {hour}
-                      </option>
-                    ))}
+                    {visitHours.map((hour) => {
+                      if (visit.date)
+                        return (
+                          <option
+                            selected={compareHoursAndMinutes(hour)}
+                            value={hour}
+                            key={hour}
+                            disabled={visit.doctor?.hoursTaken.includes(hour)}>
+                            {hour}
+                          </option>
+                        );
+                    })}
                   </select>
                 </label>
                 <div>
@@ -86,8 +120,13 @@ const TimeChoose = ({ sliderRef }: Props) => {
                       className="time-choose-selector"
                       name="reason"
                       id="reason">
-                      {visitReasons.map((reason) => (
-                        <option key={reason}>{reason}</option>
+                      {visitDetails.map((detail) => (
+                        <option
+                          value={[detail.reason, detail.price.toString()]}
+                          selected={visit.reason === detail.reason}
+                          key={detail.reason}>
+                          {detail.reason}
+                        </option>
                       ))}
                     </select>
                   </label>

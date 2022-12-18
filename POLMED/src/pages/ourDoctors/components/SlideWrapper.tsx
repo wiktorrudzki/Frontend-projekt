@@ -10,7 +10,7 @@ type Props = {
   titleLeft: string;
   btnPrevContent: string;
   btnNextContent: string;
-  clean: boolean;
+  clearWhenBack: boolean;
   prevElement: HTMLElement;
   currentDoctor: JSX.Element;
   rightContent: JSX.Element;
@@ -24,7 +24,7 @@ const SlideWrapper = ({
   titleLeft,
   btnPrevContent,
   btnNextContent,
-  clean,
+  clearWhenBack,
   prevElement,
   currentDoctor,
   rightContent,

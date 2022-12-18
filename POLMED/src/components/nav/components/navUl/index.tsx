@@ -5,6 +5,8 @@ import Button from "@/components/button";
 import { usePath } from "@/hooks/usePath/usePath";
 import { useLogin } from "@/hooks/useLogin/useLogin";
 import { useNavigate } from "react-router-dom";
+import { useVisit } from "@/hooks/useVisit/useVisit";
+import { ActionTypes } from "@/hooks/useVisit/types";
 
 type Props = {
   type: "desktop" | "mobile";
@@ -14,6 +16,7 @@ type Props = {
 
 const NavUl = ({ type }: Props) => {
   const currentPath = usePath();
+  const { dispatchVisit } = useVisit();
   const { isLoggedIn, setIsLoggedIn } = useLogin();
   const navigate = useNavigate();
   const ulRef = useRef<null | HTMLUListElement>(null);
@@ -44,14 +47,15 @@ const NavUl = ({ type }: Props) => {
   }, [window.innerWidth]);
 
   const login = () => {
+    if (currentPath === "/ourDoctors") navigate("/");
     setIsLoggedIn(true);
+    dispatchVisit({ type: ActionTypes.clear });
   };
 
   const logout = () => {
-    if (currentPath === "/myAccount") {
-      navigate("/");
-    }
+    if (currentPath === "/myAccount" || currentPath === "/ourDoctors") navigate("/");
     setIsLoggedIn(false);
+    dispatchVisit({ type: ActionTypes.clear });
   };
 
   const checkHomePage = () =>
