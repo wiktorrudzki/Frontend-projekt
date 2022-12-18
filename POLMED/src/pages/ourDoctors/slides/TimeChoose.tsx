@@ -11,7 +11,7 @@ type Props = {
 };
 
 const TimeChoose = ({ sliderRef }: Props) => {
-  const { visit, dispatchVisit, setAllVisits } = useVisit();
+  const { visit, dispatchVisit, allVisits, setAllVisits } = useVisit();
 
   let currentHour: string;
   let currentMinutes: string;
@@ -26,6 +26,7 @@ const TimeChoose = ({ sliderRef }: Props) => {
       sliderRef.current.style.setProperty("transform", "translate(-300vw)");
       setAllVisits((prev) => {
         if (visit.date && visit.doctor && visit.price && visit.reason) {
+          console.log(visit.reason);
           return [
             ...prev,
             {
@@ -39,6 +40,8 @@ const TimeChoose = ({ sliderRef }: Props) => {
       });
     }
   };
+
+  console.log(allVisits);
 
   const compareHoursAndMinutes = (hour: string) => {
     return hour === currentHour + ":" + currentMinutes + "0";

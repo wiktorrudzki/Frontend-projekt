@@ -9,20 +9,19 @@ const MyAccount = () => {
       {allVisits.length > 0 && (
         <>
           <h2>Moje wizyty:</h2>
-          {allVisits.map((visit) => {
+          {allVisits.map((visit, index) => {
             return (
               <VisitWrapper
-                key={visit.doctor?.name}
+                key={index}
                 doctor={visit.doctor}
                 date={new Date(visit.date).toLocaleString()}
-                price={50}
-                reason="wizyta kontrolna"
+                reason={visit.reason}
+                price={visit.price}
               />
             );
           })}
         </>
       )}
-
     </div>
   );
 };
