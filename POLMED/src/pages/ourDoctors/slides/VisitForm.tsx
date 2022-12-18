@@ -52,14 +52,14 @@ const VisitForm = ({ sliderRef }: Props) => {
                   name="name"
                   errorEmptyMsg="podaj swoje imię"
                   errorWrongMsg="nieprawidłowe imię"
-                  inputPattern="[a-zA-Z]{3,}$"
+                  inputPattern="^[a-zA-Z]{3,}$"
                 />
                 <Input
                   label="Nazwisko"
                   name="surrname"
                   errorEmptyMsg="podaj swoje nazwisko"
                   errorWrongMsg="nieprawidłowe nazwisko"
-                  inputPattern="[a-zA-Z]{3,}$"
+                  inputPattern="^[a-zA-Z]{3,}$"
                   type="surrname"
                 />
                 <Input
