@@ -30,7 +30,7 @@ const SlideWrapper = ({
   rightContent,
   translateTo
 }: Props) => {
-  const { visit, dispatchVisit } = useVisit();
+  const { dispatchVisit } = useVisit();
   const [width, setWidth] = useState<number>(window.innerWidth);
 
   function handleWindowSizeChange() {
@@ -61,29 +61,25 @@ const SlideWrapper = ({
   );
 
   return (
-    <>
-      {visit.doctor && (
-        <div className="slide-wrapper">
-          <section className="slide-section">
-            <div>
-              <h2>{titleLeft}</h2>
-              {currentDoctor}
-            </div>
-            {!isMobile && btnPrevContent && translateTo && prevElement && prevButton}
-          </section>
-          <section className="slide-section">
-            <div>
-              <h2>{titleRight}</h2>
-              {rightContent}
-            </div>
-            {handleNextSlide && btnNextContent && (
-              <Button onClick={handleNextSlide} content={btnNextContent} btnType="btn-primary" />
-            )}
-            {isMobile && btnPrevContent && translateTo && prevElement && prevButton}
-          </section>
+    <div className="slide-wrapper">
+      <section className="slide-section">
+        <div>
+          <h2>{titleLeft}</h2>
+          {currentDoctor}
         </div>
-      )}
-    </>
+        {!isMobile && btnPrevContent && translateTo && prevElement && prevButton}
+      </section>
+      <section className="slide-section">
+        <div>
+          <h2>{titleRight}</h2>
+          {rightContent}
+        </div>
+        {handleNextSlide && btnNextContent && (
+          <Button onClick={handleNextSlide} content={btnNextContent} btnType="btn-primary" />
+        )}
+        {isMobile && btnPrevContent && translateTo && prevElement && prevButton}
+      </section>
+    </div>
   );
 };
 

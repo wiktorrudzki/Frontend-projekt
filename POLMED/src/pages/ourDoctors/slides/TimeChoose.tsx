@@ -5,13 +5,15 @@ import SlideWrapper from "../components/SlideWrapper";
 import { ActionTypes } from "@/hooks/useVisit/types";
 import { visitHours } from "@/data/visitHours";
 import { visitDetails } from "@/data/visitDetails";
+import { useLogin } from "@/hooks/useLogin/useLogin";
 
 type Props = {
   sliderRef: React.MutableRefObject<HTMLDivElement | null>;
 };
 
 const TimeChoose = ({ sliderRef }: Props) => {
-  const { visit, dispatchVisit, allVisits, setAllVisits } = useVisit();
+  const { visit, dispatchVisit, setAllVisits } = useVisit();
+  const { isLoggedIn } = useLogin();
 
   let currentHour: string;
   let currentMinutes: string;
@@ -21,12 +23,11 @@ const TimeChoose = ({ sliderRef }: Props) => {
     currentMinutes = new Date(visit.date).getMinutes().toString().slice(0, 1);
   }
 
-  const handleNextSlide = () => {
+  const addNewVisit = (translate: string) => {
     if (sliderRef.current && visit.date && !new Date(visit.date).toString().includes("00:00:00")) {
-      sliderRef.current.style.setProperty("transform", "translate(-300vw)");
+      sliderRef.current.style.setProperty("transform", `translate(${translate}vw)`);
       setAllVisits((prev) => {
         if (visit.date && visit.doctor && visit.price && visit.reason) {
-          console.log(visit.reason);
           return [
             ...prev,
             {
@@ -41,7 +42,14 @@ const TimeChoose = ({ sliderRef }: Props) => {
     }
   };
 
-  console.log(allVisits);
+  const handleNextSlide = () => {
+    if (isLoggedIn) {
+      addNewVisit("-400");
+      dispatchVisit({ type: ActionTypes.clear });
+    } else {
+      addNewVisit("-300");
+    }
+  };
 
   const compareHoursAndMinutes = (hour: string) => {
     return hour === currentHour + ":" + currentMinutes + "0";
@@ -85,79 +93,77 @@ const TimeChoose = ({ sliderRef }: Props) => {
   };
 
   return (
-    <>
+    <div className="time-choose-page slide">
       {visit.doctor && visit.date && (
-        <div className="time-choose-page slide">
-          <SlideWrapper
-            sliderRef={sliderRef}
-            handleNextSlide={handleNextSlide}
-            titleLeft="Podsumowanie:"
-            titleRight="Wybierz godzinę wizyty:"
-            btnPrevContent="wróć"
-            btnNextContent="umów się"
-            clearWhenBack={false}
-            prevElement={document.querySelector(".date-choose-page") as HTMLElement}
-            currentDoctor={
-              <Doctor
-                name={visit.doctor.name}
-                photo={visit.doctor.photo}
-                type={visit.doctor.type}
-                date={new Date(visit.date).toLocaleDateString()}
-                isBooked={true}
-              />
-            }
-            rightContent={
-              <div className="time-choose-right-content">
+        <SlideWrapper
+          sliderRef={sliderRef}
+          handleNextSlide={handleNextSlide}
+          titleLeft="Podsumowanie:"
+          titleRight="Wybierz godzinę wizyty:"
+          btnPrevContent="wróć"
+          btnNextContent="umów się"
+          clearWhenBack={false}
+          prevElement={document.querySelector(".date-choose-page") as HTMLElement}
+          currentDoctor={
+            <Doctor
+              name={visit.doctor.name}
+              photo={visit.doctor.photo}
+              type={visit.doctor.type}
+              date={new Date(visit.date).toLocaleDateString()}
+              isBooked={true}
+            />
+          }
+          rightContent={
+            <div className="time-choose-right-content">
+              <label>
+                <select
+                  onChange={handleTimeChange}
+                  className="time-choose-selector"
+                  name="reason"
+                  id="reason">
+                  {visitHours.map((hour) => {
+                    if (visit.date)
+                      return (
+                        <option
+                          selected={compareHoursAndMinutes(hour)}
+                          value={hour}
+                          key={hour}
+                          disabled={visit.doctor?.hoursTaken.includes(hour)}>
+                          {hour}
+                        </option>
+                      );
+                  })}
+                </select>
+              </label>
+              <div>
+                <h2>Wybierz cel wizyty:</h2>
                 <label>
                   <select
-                    onChange={handleTimeChange}
+                    onChange={handleReasonChange}
                     className="time-choose-selector"
                     name="reason"
                     id="reason">
-                    {visitHours.map((hour) => {
-                      if (visit.date)
-                        return (
-                          <option
-                            selected={compareHoursAndMinutes(hour)}
-                            value={hour}
-                            key={hour}
-                            disabled={visit.doctor?.hoursTaken.includes(hour)}>
-                            {hour}
-                          </option>
-                        );
-                    })}
+                    {visitDetails.map((detail) => (
+                      <option
+                        value={[detail.reason, detail.price.toString()]}
+                        selected={visit.reason === detail.reason}
+                        key={detail.reason}>
+                        {detail.reason}
+                      </option>
+                    ))}
                   </select>
                 </label>
-                <div>
-                  <h2>Wybierz cel wizyty:</h2>
-                  <label>
-                    <select
-                      onChange={handleReasonChange}
-                      className="time-choose-selector"
-                      name="reason"
-                      id="reason">
-                      {visitDetails.map((detail) => (
-                        <option
-                          value={[detail.reason, detail.price.toString()]}
-                          selected={visit.reason === detail.reason}
-                          key={detail.reason}>
-                          {detail.reason}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                </div>
-                <div>
-                  <Link to="/pricing">Zobacz aktualny cennik usług</Link>
-                  <p>Płatność tylko kartą lub gotówką w placówce</p>
-                </div>
               </div>
-            }
-            translateTo="-100"
-          />
-        </div>
+              <div>
+                <Link to="/pricing">Zobacz aktualny cennik usług</Link>
+                <p>Płatność tylko kartą lub gotówką w placówce</p>
+              </div>
+            </div>
+          }
+          translateTo="-100"
+        />
       )}
-    </>
+    </div>
   );
 };
 

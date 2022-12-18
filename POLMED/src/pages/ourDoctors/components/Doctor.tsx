@@ -12,7 +12,17 @@ type Props = {
   onClick?: () => void;
 };
 
-const Doctor = ({ photo, name, type, price, reason, date, isBooked, doctorsSlide, onClick }: Props) => {
+const Doctor = ({
+  photo,
+  name,
+  type,
+  price,
+  reason,
+  date,
+  isBooked,
+  doctorsSlide,
+  onClick
+}: Props) => {
   return (
     <div className="doctor">
       <div style={{ backgroundImage: `url(${photo}` }} className="doctor-img"></div>

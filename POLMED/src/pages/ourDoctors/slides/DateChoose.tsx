@@ -17,33 +17,25 @@ const DateChoose = ({ sliderRef }: Props) => {
   };
 
   return (
-    <>
+    <div className="date-choose-page slide">
       {visit.doctor && (
-        <>
-          <div className="date-choose-page slide">
-            <SlideWrapper
-              sliderRef={sliderRef}
-              handleNextSlide={handleNextSlide}
-              titleRight="Wybierz termin wizyty:"
-              titleLeft="Podsumowanie:"
-              btnPrevContent="wróć"
-              btnNextContent="dalej"
-              prevElement={document.querySelector(".doctors-page") as HTMLElement}
-              clearWhenBack={true}
-              currentDoctor={
-                <Doctor
-                  name={visit.doctor.name}
-                  photo={visit.doctor.photo}
-                  type={visit.doctor.type}
-                />
-              }
-              rightContent={<Calendar />}
-              translateTo="0"
-            />
-          </div>
-        </>
+        <SlideWrapper
+          sliderRef={sliderRef}
+          handleNextSlide={handleNextSlide}
+          titleRight="Wybierz termin wizyty:"
+          titleLeft="Podsumowanie:"
+          btnPrevContent="wróć"
+          btnNextContent="dalej"
+          prevElement={document.querySelector(".doctors-page") as HTMLElement}
+          clearWhenBack={true}
+          currentDoctor={
+            <Doctor name={visit.doctor.name} photo={visit.doctor.photo} type={visit.doctor.type} />
+          }
+          rightContent={<Calendar />}
+          translateTo="0"
+        />
       )}
-    </>
+    </div>
   );
 };
 

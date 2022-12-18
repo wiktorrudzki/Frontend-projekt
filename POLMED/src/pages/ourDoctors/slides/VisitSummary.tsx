@@ -10,7 +10,7 @@ type Props = {
 };
 
 const VisitSummary = ({ sliderRef }: Props) => {
-  const { visit } = useVisit();
+  const { allVisits } = useVisit();
   const { isLoggedIn } = useLogin();
   const navigate = useNavigate();
 
@@ -18,46 +18,44 @@ const VisitSummary = ({ sliderRef }: Props) => {
     navigate("/");
   };
 
+  console.log(allVisits);
+
   return (
-    <>
-      {visit.doctor && visit.date && visit.price && visit.reason && (
-        <div className="visit-summary-page slide">
-          <SlideWrapper
-            sliderRef={sliderRef}
-            titleLeft="Podsumowanie:"
-            titleRight="Dziękujemy za rejestrację online!"
-            clearWhenBack={false}
-            currentDoctor={
-              <Doctor
-                photo={visit.doctor.photo}
-                name={visit.doctor.name}
-                type={visit.doctor.type}
-                price={visit.price}
-                isBooked={true}
-                reason={visit.reason}
-                date={new Date(visit.date).toLocaleString()}
-              />
-            }
-            rightContent={
-              <div className="visit-summary-right-content">
-                {isLoggedIn ? (
-                  <p>
-                    W celu <Link to="/myAccount">anulowania</Link> wizyty przejdź do zakładki “Moje
-                    konto” lub skontaktuj się z nami telefonicznie
-                  </p>
-                ) : (
-                  <p>
-                    W celu <span>anulowania</span> wizyty skontaktuj się z nami telefonicznie
-                  </p>
-                )}
-                <i></i>
-              </div>
-            }
+    <div className="visit-summary-page slide">
+      <SlideWrapper
+        sliderRef={sliderRef}
+        titleLeft="Podsumowanie:"
+        titleRight="Dziękujemy za rejestrację online!"
+        clearWhenBack={false}
+        currentDoctor={
+          <Doctor
+            photo={allVisits[allVisits.length - 1].doctor.photo}
+            name={allVisits[allVisits.length - 1].doctor.name}
+            type={allVisits[allVisits.length - 1].doctor.type}
+            price={allVisits[allVisits.length - 1].price}
+            isBooked={true}
+            reason={allVisits[allVisits.length - 1].reason}
+            date={new Date(allVisits[allVisits.length - 1].date).toLocaleString()}
           />
-          <Button onClick={handleEndReservation} content="Strona Główna" btnType="btn-primary" />
-        </div>
-      )}
-    </>
+        }
+        rightContent={
+          <div className="visit-summary-right-content">
+            {isLoggedIn ? (
+              <p>
+                W celu <Link to="/myAccount">anulowania</Link> wizyty przejdź do zakładki “Moje
+                konto” lub skontaktuj się z nami telefonicznie
+              </p>
+            ) : (
+              <p>
+                W celu <span>anulowania</span> wizyty skontaktuj się z nami telefonicznie
+              </p>
+            )}
+            <i></i>
+          </div>
+        }
+      />
+      <Button onClick={handleEndReservation} content="Strona Główna" btnType="btn-primary" />
+    </div>
   );
 };
 
