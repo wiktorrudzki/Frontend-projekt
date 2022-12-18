@@ -4,7 +4,6 @@ import SlideWrapper from "../components/SlideWrapper";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "@/components/button";
 import { useLogin } from "@/hooks/useLogin/useLogin";
-import { ActionTypes } from "@/hooks/useVisit/types";
 
 type Props = {
   sliderRef: React.MutableRefObject<HTMLDivElement | null>;

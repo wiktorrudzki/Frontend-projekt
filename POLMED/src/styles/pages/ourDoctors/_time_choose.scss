@@ -51,3 +51,15 @@
     border-bottom-right-radius: 0;
   }
 }
+
+@media (max-width: 768px) {
+  .time-choose-right-content {
+    label {
+      max-height: 5em;
+      overflow-y: visible;
+      select {
+        height: auto;
+      }
+    }
+  }
+}

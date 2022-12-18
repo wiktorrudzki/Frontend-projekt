@@ -22,3 +22,42 @@
     color: $color-secondary;
   }
 }
+
+@media (max-width: 768px) {
+  .visit-summary-page {
+    > div {
+      @include flex(column-reverse);
+      gap: 1.5em;
+      margin-top: 0;
+      margin-bottom: 3em;
+      > section {
+        > div {
+          gap: 1em;
+          > div {
+            @include flex(column);
+          }
+        }
+      }
+      > section:nth-child(2) {
+        > div {
+          > h2 {
+            width: 75%;
+            margin: auto;
+            font-size: 2.2em;
+          }
+        }
+      }
+      > section:nth-child(1) {
+        > div {
+          > h2 {
+            font-size: 1.6em;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  .visit-summary-right-content {
+    gap: 0.5em;
+  }
+}

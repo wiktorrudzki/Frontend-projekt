@@ -2,7 +2,6 @@ import Input from "@/components/form/_input";
 import { useLogin } from "@/hooks/useLogin/useLogin";
 import { ActionTypes } from "@/hooks/useVisit/types";
 import { useVisit } from "@/hooks/useVisit/useVisit";
-import { VisitType } from "@/types/VisitTypes";
 import Doctor from "../components/Doctor";
 import SlideWrapper from "../components/SlideWrapper";
 
