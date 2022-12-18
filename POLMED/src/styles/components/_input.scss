@@ -7,9 +7,9 @@
 }
 
 .form-field {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   display: grid;
-  margin: 2em 0;
+  margin: 0;
   width: fit-content;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .form-field--wraper__input {
-  font-size: inherit;
+  font-size: 0.85em;
   height: 2.5em;
   border-radius: 0.625em;
   width: 16em;
@@ -60,7 +60,7 @@
 }
 
 .form-field--warning-msg {
-  font-size: 0.875em;
+  font-size: 0.7em;
   margin: 0 0.5em;
   height: 1em;
   color: $color-primary;

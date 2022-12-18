@@ -8,6 +8,7 @@ type Props = {
   inputPattern: string;
   maxInputLength?: number;
   required?: boolean;
+  type?: string;
 };
 
 function Input({
@@ -17,7 +18,8 @@ function Input({
   errorWrongMsg,
   inputPattern,
   maxInputLength = 50,
-  required = false
+  required = false,
+  type
 }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const iconRef = useRef<HTMLImageElement>(null);
@@ -64,7 +66,7 @@ function Input({
           onChange={checkValidity}
           ref={inputRef}
           className="form-field--wraper__input"
-          type="text"
+          type={type}
           name={name}
           id={name}
           pattern={inputPattern}

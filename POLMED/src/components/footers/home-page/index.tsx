@@ -5,7 +5,6 @@ import { useRef, useEffect } from "react";
 function updateHpFooterHeightVar(hpFooterRef: React.RefObject<HTMLElement>) {
   const rootElement = document.querySelector(":root");
   const footerHeight = hpFooterRef.current?.clientHeight;
-  console.log(footerHeight);
 
   if (!footerHeight || !rootElement) return;
 

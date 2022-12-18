@@ -9,7 +9,7 @@ type Props = {
   titleLeft: string;
   btnPrevContent: string;
   btnNextContent: string;
-  clean: boolean;
+  clearWhenBack: boolean;
   prevElement: HTMLElement;
   currentDoctor: JSX.Element;
   rightContent: JSX.Element;
@@ -23,7 +23,7 @@ const SlideWrapper = ({
   titleLeft,
   btnPrevContent,
   btnNextContent,
-  clean,
+  clearWhenBack,
   prevElement,
   currentDoctor,
   rightContent,
@@ -41,7 +41,7 @@ const SlideWrapper = ({
               {currentDoctor}
             </div>
             <Button
-              onClick={() => handlePrevSlide(sliderRef, dispatchVisit, clean, prevElement, translateTo)}
+              onClick={() => handlePrevSlide(sliderRef, dispatchVisit, clearWhenBack, prevElement, translateTo)}
               content={btnPrevContent}
               btnType="btn-tertiary"
             />
