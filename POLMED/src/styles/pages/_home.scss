@@ -65,7 +65,7 @@
 
 .hp-down-triangle {
   @extend .hp-up-triangle;
-  bottom: 2%;
+  bottom: -1%;
   transform: translateX(-50%) rotate(180deg);
   color: $color-primary;
 }
