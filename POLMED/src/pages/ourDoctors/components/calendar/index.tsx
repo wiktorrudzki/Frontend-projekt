@@ -34,6 +34,7 @@ const Calendar = () => {
     <div>
       <div className="calendar-container">
         <CalendarComponent
+          activeStartDate={new Date(2023, 0, 1)}
           minDetail="month"
           onChange={handleChangeDate}
           value={visit.date ? new Date(visit.date) : null}

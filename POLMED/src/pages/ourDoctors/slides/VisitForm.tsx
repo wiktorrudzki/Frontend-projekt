@@ -30,7 +30,7 @@ const VisitForm = ({ sliderRef }: Props) => {
   };
 
   return (
-    <div className="visit-form-page slide">
+    <div style={isLoggedIn ? { display: "none" } : {}} className="visit-form-page slide">
       {!isLoggedIn && visit.doctor && visit.date && visit.price && visit.reason && (
         <SlideWrapper
           sliderRef={sliderRef}

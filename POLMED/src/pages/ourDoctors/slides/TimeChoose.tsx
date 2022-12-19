@@ -44,7 +44,7 @@ const TimeChoose = ({ sliderRef }: Props) => {
 
   const handleNextSlide = () => {
     if (isLoggedIn) {
-      addNewVisit("-400");
+      addNewVisit("-300");
       dispatchVisit({ type: ActionTypes.clear });
     } else {
       addNewVisit("-300");
