@@ -15,7 +15,7 @@ const Contact = () => {
             </ContactInfo>
             <ContactInfo iconClassName="contact-page-info--icon__clock">
               <span>Pn. - pt.</span>
-              <span>10:00 - 18:00</span>
+              <span>7:00 - 18:00</span>
             </ContactInfo>
             <ContactInfo iconClassName="contact-page-info--icon__envelope">
               <span>biuro@polmed.pl</span>

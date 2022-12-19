@@ -92,6 +92,8 @@ const TimeChoose = ({ sliderRef }: Props) => {
     e.target.blur();
   };
 
+  if (visit.date) console.log(new Date(visit.date).toLocaleDateString());
+
   return (
     <div className="time-choose-page slide">
       {visit.doctor && visit.date && (
@@ -109,7 +111,7 @@ const TimeChoose = ({ sliderRef }: Props) => {
               name={visit.doctor.name}
               photo={visit.doctor.photo}
               type={visit.doctor.type}
-              date={new Date(visit.date).toLocaleDateString()}
+              date={new Date(visit.date).toLocaleDateString() + "xxx"}
               isBooked={true}
             />
           }
