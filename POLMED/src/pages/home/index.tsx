@@ -29,7 +29,7 @@ const Home = () => {
             <span>u twojego lekarza.</span>
           </h1>
           <div className="hp-up-column">
-            <img src={doctorImage} className="hp-up-doctor" />
+            <img src={doctorImage} className="hp-up-doctor" alt="doctor" />
           </div>
         </div>
         <i className="hp-up-triangle" onClick={scrollDown}></i>
