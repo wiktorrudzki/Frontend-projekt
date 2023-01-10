@@ -43,6 +43,9 @@ const TimeChoose = ({ sliderRef }: Props) => {
   };
 
   const handleNextSlide = () => {
+    if (!visit.date) return;
+    if (new Date(visit.date).toString().includes("00:00:00")) return;
+
     if (isLoggedIn) {
       addNewVisit("-300");
       dispatchVisit({ type: ActionTypes.clear });
@@ -92,7 +95,7 @@ const TimeChoose = ({ sliderRef }: Props) => {
     e.target.blur();
   };
 
-  if (visit.date) console.log(new Date(visit.date).toLocaleDateString());
+  if (visit.date) console.log(new Date(visit.date));
 
   return (
     <div className="time-choose-page slide">
